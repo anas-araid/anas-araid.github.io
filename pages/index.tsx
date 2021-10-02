@@ -1,6 +1,19 @@
+import React from 'react';
 import type { NextPage } from 'next';
-import styles from '../styles/Home.module.css';
+import { DocumentHead } from '../components/DocumentHead';
+import { Navbar } from '../components/Navbar';
+import { Home } from '../containers/Home';
 
-const Home: NextPage = () => <div className={styles.container}>test</div>;
+const Index: NextPage = () => (
+  <div className='h-screen bg-black text-white'>
+    <DocumentHead />
+    <div className='flex justify-center'>
+      <div className='max-w-3xl w-full'>
+        <Navbar />
+        <Home />
+      </div>
+    </div>
+  </div>
+);
 
-export default Home;
+export default Index;
