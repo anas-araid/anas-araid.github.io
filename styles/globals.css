@@ -13,6 +13,27 @@
   font-family: 'ITC Avant Garde Gothic Std Book', sans-serif;
 }
 
+::selection {
+  background: #1bffcd;
+  color: #fff;
+  -webkit-text-fill-color: #fff;
+}
+
+.underline--magical {
+  background-repeat: no-repeat;
+  background-size: 100% 0.2em;
+  background-position: 0 88%;
+  transition: background-size 0.25s ease-in;
+}
+.underline--light {
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+}
+.underline--dark {
+  background-image: linear-gradient(to right, rgb(236, 72, 153), rgb(239, 68, 68));
+}
+.underline--magical:hover {
+  background-size: 100% 150%;
+}
 /* font */
 
 @font-face {

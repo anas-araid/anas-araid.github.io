@@ -15,10 +15,10 @@ const Navbar: FunctionComponent<INavbarProps> = ({ isDarkMode, onChange }) => {
   return (
     <div className='flex mt-10 md:mt-20'>
       <div className='flex w-1/2 justify-start'>
-        <h2>A</h2>
+        <h2>[logo]</h2>
       </div>
       <div className='flex w-1/2 justify-end'>
-        <DarkModeSwitch className='h-6' checked={isDarkMode} onChange={onChange} data-tip data-for='darkModeSwitch' />
+        <DarkModeSwitch className='h-6 outline-none' checked={isDarkMode} onChange={onChange} data-tip data-for='darkModeSwitch' />
         {isTooltipVisible && (
           <ReactTooltip id='darkModeSwitch' effect='solid'>
             <span>{isDarkMode ? 'Activate light mode' : 'Activate dark mode'}</span>

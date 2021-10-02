@@ -6,7 +6,6 @@ export function useDarkMode() {
 
   useEffect(() => {
     if (isDark === undefined && localStorage.isDark === undefined) {
-      console.log('primo if');
       localStorage.setItem('isDark', 'true');
       setDarkMode(localStorage.isDark);
       return;

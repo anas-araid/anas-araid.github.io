@@ -19,8 +19,7 @@ const Index: NextPage = () => {
       <div className='flex justify-center px-5'>
         <div className='max-w-2xl w-full'>
           <Navbar isDarkMode={isDark === 'true'} onChange={handleClick} />
-          <Home />
-          <p onClick={() => handleClick()}>dark mode</p>
+          <Home isDarkMode={isDark === 'true'} />
         </div>
       </div>
     </div>
