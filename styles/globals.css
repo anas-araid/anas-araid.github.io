@@ -1,3 +1,270 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .text-gradient {
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+* {
+  font-family: 'ITC Avant Garde Gothic Std Book', sans-serif;
+}
+
+/* font */
+
+@font-face {
+  font-family: 'ITC Avant Garde Gothic Std Extra Light';
+  font-style: normal;
+  font-weight: normal;
+  src: local('ITC Avant Garde Gothic Std Extra Light'), url('/fonts/ITCAvantGarde/ITCAvantGardeStdXLt.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'ITC Avant Garde Gothic Std Extra Light Condensed';
+  font-style: normal;
+  font-weight: normal;
+  src: local('ITC Avant Garde Gothic Std Extra Light Condensed'), url('/fonts/ITCAvantGarde/ITCAvantGardeStdXLtCn.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'ITC Avant Garde Gothic Std Extra Light Condensed Oblique';
+  font-style: normal;
+  font-weight: normal;
+  src: local('ITC Avant Garde Gothic Std Extra Light Condensed Oblique'), url('/fonts/ITCAvantGarde/ITCAvantGardeStdXLtCnObl.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'ITC Avant Garde Gothic Std Extra Light Oblique';
+  font-style: normal;
+  font-weight: normal;
+  src: local('ITC Avant Garde Gothic Std Extra Light Oblique'), url('/fonts/ITCAvantGarde/ITCAvantGardeStdXLtObl.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'ITC Avant Garde Gothic Std Book';
+  font-style: normal;
+  font-weight: normal;
+  src: local('ITC Avant Garde Gothic Std Book'), url('/fonts/ITCAvantGarde/ITCAvantGardeStdBk.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'ITC Avant Garde Gothic Std Book Condensed';
+  font-style: normal;
+  font-weight: normal;
+  src: local('ITC Avant Garde Gothic Std Book Condensed'), url('/fonts/ITCAvantGarde/ITCAvantGardeStdBkCn.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'ITC Avant Garde Gothic Std Book Condensed Oblique';
+  font-style: normal;
+  font-weight: normal;
+  src: local('ITC Avant Garde Gothic Std Book Condensed Oblique'), url('/fonts/ITCAvantGarde/ITCAvantGardeStdBkCnObl.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'ITC Avant Garde Gothic Std Book Oblique';
+  font-style: normal;
+  font-weight: normal;
+  src: local('ITC Avant Garde Gothic Std Book Oblique'), url('/fonts/ITCAvantGarde/ITCAvantGardeStdBkObl.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'ITC Avant Garde Gothic Std Medium';
+  font-style: normal;
+  font-weight: normal;
+  src: local('ITC Avant Garde Gothic Std Medium'), url('/fonts/ITCAvantGarde/ITCAvantGardeStdMd.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'ITC Avant Garde Gothic Std Medium Condensed';
+  font-style: normal;
+  font-weight: normal;
+  src: local('ITC Avant Garde Gothic Std Medium Condensed'), url('/fonts/ITCAvantGarde/ITCAvantGardeStdMdCn.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'ITC Avant Garde Gothic Std Medium Condensed Oblique';
+  font-style: normal;
+  font-weight: normal;
+  src: local('ITC Avant Garde Gothic Std Medium Condensed Oblique'), url('/fonts/ITCAvantGarde/ITCAvantGardeStdMdCnObl.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'ITC Avant Garde Gothic Std Medium Oblique';
+  font-style: normal;
+  font-weight: normal;
+  src: local('ITC Avant Garde Gothic Std Medium Oblique'), url('/fonts/ITCAvantGarde/ITCAvantGardeStdMdObl.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'ITC Avant Garde Gothic Std Demi';
+  font-style: normal;
+  font-weight: normal;
+  src: local('ITC Avant Garde Gothic Std Demi'), url('/fonts/ITCAvantGarde/ITCAvantGardeStdDemi.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'ITC Avant Garde Gothic Std Demi Condensed';
+  font-style: normal;
+  font-weight: normal;
+  src: local('ITC Avant Garde Gothic Std Demi Condensed'), url('/fonts/ITCAvantGarde/ITCAvantGardeStdDemiCn.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'ITC Avant Garde Gothic Std Demi Condensed Oblique';
+  font-style: normal;
+  font-weight: normal;
+  src: local('ITC Avant Garde Gothic Std Demi Condensed Oblique'), url('/fonts/ITCAvantGarde/ITCAvantGardeStdDemiCnObl.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'ITC Avant Garde Gothic Std Demi Oblique';
+  font-style: normal;
+  font-weight: normal;
+  src: local('ITC Avant Garde Gothic Std Demi Oblique'), url('/fonts/ITCAvantGarde/ITCAvantGardeStdDemiObl.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'ITC Avant Garde Gothic Std Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('ITC Avant Garde Gothic Std Bold'), url('/fonts/ITCAvantGarde/ITCAvantGardeStdBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'ITC Avant Garde Gothic Std Bold Condensed';
+  font-style: normal;
+  font-weight: normal;
+  src: local('ITC Avant Garde Gothic Std Bold Condensed'), url('/fonts/ITCAvantGarde/ITCAvantGardeStdBoldCn.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'ITC Avant Garde Gothic Std Bold Condensed Oblique';
+  font-style: normal;
+  font-weight: normal;
+  src: local('ITC Avant Garde Gothic Std Bold Condensed Oblique'), url('/fonts/ITCAvantGarde/ITCAvantGardeStdBoldCnObl.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'ITC Avant Garde Gothic Std Bold Oblique';
+  font-style: normal;
+  font-weight: normal;
+  src: local('ITC Avant Garde Gothic Std Bold Oblique'), url('/fonts/ITCAvantGarde/ITCAvantGardeStdBoldObl.woff') format('woff');
+}
+
+/* #### Generated By: http://www.cufonfonts.com #### */
+
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro 45 Light';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Neue Haas Grotesk Display Pro 45 Light'), url('/fonts/Neue-haas-grotesk/NeueHaasDisplayLight.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro 46 Light Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Neue Haas Grotesk Display Pro 46 Light Italic'), url('/fonts/Neue-haas-grotesk/NeueHaasDisplayLightItalic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro 15 XXThin';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Neue Haas Grotesk Display Pro 15 XXThin'), url('/fonts/Neue-haas-grotesk/NeueHaasDisplayXXThin.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro 16 XXThin Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Neue Haas Grotesk Display Pro 16 XXThin Italic'), url('/fonts/Neue-haas-grotesk/NeueHaasDisplayXXThinItalic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro 25 XThin';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Neue Haas Grotesk Display Pro 25 XThin'), url('/fonts/Neue-haas-grotesk/NeueHaasDisplayXThin.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro 26 XThin Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Neue Haas Grotesk Display Pro 26 XThin Italic'), url('/fonts/Neue-haas-grotesk/NeueHaasDisplayXThinItalic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro 35 Thin';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Neue Haas Grotesk Display Pro 35 Thin'), url('/fonts/Neue-haas-grotesk/NeueHaasDisplayThin.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro 36 Thin Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Neue Haas Grotesk Display Pro 36 Thin Italic'), url('/fonts/Neue-haas-grotesk/NeueHaasDisplayThinItalic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro 55 Roman';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Neue Haas Grotesk Display Pro 55 Roman'), url('/fonts/Neue-haas-grotesk/NeueHaasDisplayRoman.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro 56 Roman Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Neue Haas Grotesk Display Pro 56 Roman Italic'), url('/fonts/Neue-haas-grotesk/NeueHaasDisplayRomanItalic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro 65 Medium';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Neue Haas Grotesk Display Pro 65 Medium'), url('/fonts/Neue-haas-grotesk/NeueHaasDisplayMediu.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro 66 Medium Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Neue Haas Grotesk Display Pro 66 Medium Italic'), url('/fonts/Neue-haas-grotesk/NeueHaasDisplayMediumItalic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro 75 Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Neue Haas Grotesk Display Pro 75 Bold'), url('/fonts/Neue-haas-grotesk/NeueHaasDisplayBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro 76 Bold Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Neue Haas Grotesk Display Pro 76 Bold Italic'), url('/fonts/Neue-haas-grotesk/NeueHaasDisplayBoldItalic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro 95 Black';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Neue Haas Grotesk Display Pro 95 Black'), url('/fonts/Neue-haas-grotesk/NeueHaasDisplayBlack.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro 96 Black Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Neue Haas Grotesk Display Pro 96 Black Italic'), url('/fonts/Neue-haas-grotesk/NeueHaasDisplayBlackItalic.woff') format('woff');
+}

@@ -1,8 +1,8 @@
 import { FunctionComponent } from 'react';
 
 const Navbar: FunctionComponent = () => (
-  <div>
-    <h2>Anas Araid</h2>
+  <div className='mt-10 md:mt-20'>
+    <h2>A</h2>
   </div>
 );
 

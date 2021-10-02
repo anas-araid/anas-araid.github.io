@@ -7,8 +7,8 @@ import { Home } from '../containers/Home';
 const Index: NextPage = () => (
   <div className='h-screen bg-black text-white'>
     <DocumentHead />
-    <div className='flex justify-center'>
-      <div className='max-w-3xl w-full'>
+    <div className='flex justify-center px-5'>
+      <div className='max-w-2xl w-full'>
         <Navbar />
         <Home />
       </div>
