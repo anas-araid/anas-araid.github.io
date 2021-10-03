@@ -5,7 +5,7 @@ const DocumentHead: FunctionComponent = () => (
   <Head>
     <title>Anas Araid</title>
     <meta name='viewport' content='initial-scale=1.0, width=device-width' />
-    <meta name='theme-color' content='#fafafa' />
+    <meta name='theme-color' content='#000000' />
     <meta name='title' content='Anas Araid' />
     <meta name='description' content='Developer, designer and firefighter' />
     <meta name='author' content='Anas Araid' />
