@@ -12,6 +12,7 @@
     "kbar": "^0.1.0-beta.6",
     "next": "11.1.2",
     "react": "17.0.2",
+    "react-device-detect": "^2.0.0",
     "react-dom": "17.0.2",
     "react-toggle-dark-mode": "^1.0.4",
     "react-tooltip": "^4.2.21"
