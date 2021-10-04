@@ -20,7 +20,7 @@ const Index: NextPage = () => {
   };
 
   return (
-    <div className={concatClassNames(isDark === 'true' ? 'h-screen bg-black text-white' : 'bg-white text-black')}>
+    <div className={concatClassNames('transition-all h-screen duration-300', isDark === 'true' ? ' bg-black text-white ' : 'bg-white text-black')}>
       <DocumentHead />
       <KBarProvider
         actions={actions(handleActionTheme)}

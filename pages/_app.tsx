@@ -1,7 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import type { AppProps } from 'next/app';
 import '../styles/globals.css';
+import { useRouter } from 'next/dist/client/router';
+import * as ga from '../lib/ga';
 
-const App = ({ Component, pageProps }: AppProps): JSX.Element => <Component {...pageProps} />;
+const App = ({ Component, pageProps }: AppProps): JSX.Element => {
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleRouteChange = (url: string) => {
+      ga.pageview(url);
+    };
+
+    router.events.on('routeChangeComplete', handleRouteChange);
+
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
+
+  return <Component {...pageProps} />;
+};
 
 export default App;
