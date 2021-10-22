@@ -1,27 +1,21 @@
 import React from 'react';
 import type { NextPage } from 'next';
-import { DocumentHead } from '../components/DocumentHead';
 import { Layout } from '../containers/Layout';
-import { useDarkMode } from '../hooks/useDarkMode';
 import { concatClassNames } from '../utils';
 import { KBarProvider } from 'kbar';
 import { actions } from '../components/KBar';
 import { KBarContent } from '../containers/KBarContent';
+import { useThemeContext } from '../hooks/useThemeContext';
 
 const Index: NextPage = () => {
-  const [isDark, setDarkMode] = useDarkMode();
+  const { isDark, setDarkMode, theme } = useThemeContext();
 
-  const handleClick = () => {
-    setDarkMode(isDark === 'true' ? 'false' : 'true');
-  };
-
-  const handleActionTheme = (value: string) => {
+  const handleActionTheme = (value: boolean) => {
     setDarkMode(value);
   };
 
   return (
-    <div className={concatClassNames('transition-all h-screen duration-300', isDark === 'true' ? ' bg-black text-white ' : 'bg-white text-black')}>
-      <DocumentHead />
+    <div className={concatClassNames('transition-all h-screen duration-300', theme.backgroundColor, theme.textColor)}>
       <KBarProvider
         actions={actions(handleActionTheme)}
         options={{
@@ -32,7 +26,7 @@ const Index: NextPage = () => {
         }}
       >
         <KBarContent />
-        <Layout handleClick={handleClick} isDark={isDark} />
+        <Layout />
       </KBarProvider>
     </div>
   );

@@ -2,20 +2,18 @@ import { useEffect, useState } from 'react';
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function useDarkMode() {
-  const [isDark, setDarkMode] = useState<string>();
+  const [isDark, setDark] = useState<boolean>(true);
 
   useEffect(() => {
-    if (isDark === undefined && localStorage.isDark === undefined) {
-      localStorage.setItem('isDark', 'true');
-      setDarkMode(localStorage.isDark);
-      return;
+    if (localStorage.getItem('isDark')) {
+      setDark(localStorage.getItem('isDark') === 'true');
     }
-
-    if (isDark !== undefined) {
-      localStorage.setItem('isDark', isDark);
-    }
-    setDarkMode(localStorage.isDark);
   }, [isDark]);
+
+  const setDarkMode = (value: boolean) => {
+    localStorage.setItem('isDark', JSON.stringify(value));
+    setDark(value);
+  };
 
   return [isDark, setDarkMode] as const;
 }
