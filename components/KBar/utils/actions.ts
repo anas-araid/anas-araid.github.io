@@ -1,7 +1,7 @@
 import { Action, createAction } from 'kbar';
 import { useRouter } from 'next/dist/client/router';
 
-const action = (handleActionTheme: (value: string) => void): Action[] => {
+const action = (handleActionTheme: (value: boolean) => void): Action[] => {
   const router = useRouter();
 
   return [
@@ -58,7 +58,7 @@ const action = (handleActionTheme: (value: string) => void): Action[] => {
       shortcut: [],
       keywords: 'dark',
       section: '',
-      perform: () => handleActionTheme('true'),
+      perform: () => handleActionTheme(true),
       parent: 'theme',
     },
     {
@@ -67,7 +67,7 @@ const action = (handleActionTheme: (value: string) => void): Action[] => {
       shortcut: [],
       keywords: 'light',
       section: '',
-      perform: () => handleActionTheme('false'),
+      perform: () => handleActionTheme(false),
       parent: 'theme',
     },
   ];

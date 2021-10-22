@@ -3,6 +3,8 @@ import type { AppProps } from 'next/app';
 import '../styles/globals.css';
 import { useRouter } from 'next/dist/client/router';
 import * as ga from '../lib/ga';
+import { DocumentHead } from '../components/DocumentHead';
+import { ThemeProvider } from '../providers';
 
 const App = ({ Component, pageProps }: AppProps): JSX.Element => {
   const router = useRouter();
@@ -19,7 +21,14 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => {
     };
   }, [router.events]);
 
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <DocumentHead />
+      <ThemeProvider>
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </>
+  );
 };
 
 export default App;
