@@ -1,5 +1,6 @@
 import { Action, ResultHandlers, ResultState } from 'kbar';
 import React, { FunctionComponent, useEffect } from 'react';
+import { useThemeContext } from '../../hooks/useThemeContext';
 
 interface IKBarRenderProps {
   action: Action;
@@ -9,6 +10,7 @@ interface IKBarRenderProps {
 
 const KBarRender: FunctionComponent<IKBarRenderProps> = ({ action, handlers, state }) => {
   const ownRef = React.useRef<HTMLDivElement>(null);
+  const { theme } = useThemeContext();
 
   const active = state.index === state.activeIndex;
 
@@ -38,8 +40,8 @@ const KBarRender: FunctionComponent<IKBarRenderProps> = ({ action, handlers, sta
       {...handlers}
       style={{
         padding: '12px 16px',
-        background: active ? 'rgba(0 0 0 / 0.05)' : 'rgb(252 252 252)',
-        borderLeft: `2px solid ${active ? 'rgb(28 28 29)' : 'transparent'}`,
+        background: active ? 'rgba(0 0 0 / 0.05)' : theme.kbarBackground,
+        borderLeft: `2px solid ${active ? theme.kbarColor : 'transparent'}`,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',

@@ -3,7 +3,7 @@ import { useThemeContext } from '../../hooks/useThemeContext';
 import { concatClassNames } from '../../utils';
 
 const Home: FunctionComponent = () => {
-  const { isDark, setDarkMode, theme } = useThemeContext();
+  const { isDark, theme } = useThemeContext();
   return (
     <div className='mt-20'>
       <h1 className='text-5xl font-bold'>Anas Araid</h1>

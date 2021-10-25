@@ -2,9 +2,11 @@ import React, { FunctionComponent, useEffect, useState } from 'react';
 import { KBarPortal, KBarPositioner, KBarAnimator, KBarSearch, KBarResults, useKBar, VisualState } from 'kbar';
 import { isMobile } from 'react-device-detect';
 import { animatorStyle, searchStyle, resultsStyle, KBarRender } from '../../components/KBar';
+import { useThemeContext } from '../../hooks/useThemeContext';
 
 const KBarContent: FunctionComponent = () => {
   const [isSearchReadonly, setSearchReadonly] = useState(true);
+  const { theme } = useThemeContext();
 
   const { visible } = useKBar((state) => ({
     visible: state.visualState !== VisualState.hidden,
@@ -17,9 +19,9 @@ const KBarContent: FunctionComponent = () => {
   return (
     <KBarPortal>
       <KBarPositioner>
-        <KBarAnimator style={animatorStyle}>
+        <KBarAnimator style={{ ...animatorStyle, background: theme.kbarBackground, color: theme.kbarColor }}>
           <KBarSearch
-            style={searchStyle}
+            style={{ ...searchStyle, background: theme.kbarBackground, color: theme.kbarColor }}
             placeholder='Type a command or search…'
             readOnly={isMobile ? isSearchReadonly : false}
             onClick={() => setSearchReadonly(false)}
