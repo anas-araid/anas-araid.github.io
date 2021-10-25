@@ -8,7 +8,7 @@ import { KBarContent } from '../containers/KBarContent';
 import { useThemeContext } from '../hooks/useThemeContext';
 
 const Index: NextPage = () => {
-  const { isDark, setDarkMode, theme } = useThemeContext();
+  const { setDarkMode, theme } = useThemeContext();
 
   const handleActionTheme = (value: boolean) => {
     setDarkMode(value);
