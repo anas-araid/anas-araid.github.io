@@ -1,78 +1,82 @@
-import { Action, ResultHandlers, ResultState } from 'kbar';
-import React, { FunctionComponent, useEffect } from 'react';
+import { useMatches, Action, KBarResults } from 'kbar';
+import { NO_GROUP } from 'kbar/lib/useMatches';
+import React, { forwardRef } from 'react';
 import { useThemeContext } from '../../hooks/useThemeContext';
 
-interface IKBarRenderProps {
-  action: Action;
-  handlers: ResultHandlers;
-  state: ResultState;
-}
-
-const KBarRender: FunctionComponent<IKBarRenderProps> = ({ action, handlers, state }) => {
-  const ownRef = React.useRef<HTMLDivElement>(null);
-  const { theme } = useThemeContext();
-
-  const active = state.index === state.activeIndex;
-
-  useEffect(() => {
-    if (active) {
-      // wait for the KBarAnimator to resize, _then_ scrollIntoView.
-      // https://medium.com/@owencm/one-weird-trick-to-performant-touch-response-animations-with-react-9fe4a0838116
-      window.requestAnimationFrame(() =>
-        window.requestAnimationFrame(() => {
-          const element = ownRef.current;
-          if (!element) {
-            return;
-          }
-          element.scrollIntoView({
-            block: 'nearest',
-            behavior: 'smooth',
-            inline: 'start',
-          });
-        })
-      );
-    }
-  }, [active]);
+const KBarRender = (): JSX.Element => {
+  const groups = useMatches();
+  const flattened = React.useMemo(
+    () =>
+      groups.reduce((acc: unknown[], curr) => {
+        acc.push(curr.name);
+        acc.push(...curr.actions);
+        return acc;
+      }, []),
+    [groups]
+  );
 
   return (
-    <div
-      ref={ownRef}
-      {...handlers}
-      style={{
-        padding: '12px 16px',
-        background: active ? 'rgba(0 0 0 / 0.05)' : theme.kbarBackground,
-        borderLeft: `2px solid ${active ? theme.kbarColor : 'transparent'}`,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        cursor: 'pointer',
-      }}
-    >
-      <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-        {action.icon && action.icon}
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
-          <span>{action.name}</span>
-          {action.subtitle && <span style={{ fontSize: 12 }}>{action.subtitle}</span>}
-        </div>
-      </div>
-      {action.shortcut?.length ? (
-        <div style={{ display: 'grid', gridAutoFlow: 'column', gap: '4px' }}>
-          {action.shortcut.map((sc) => (
-            <kbd
-              key={sc}
-              style={{
-                padding: '4px 6px',
-                background: 'rgba(0 0 0 / .1)',
-                borderRadius: '4px',
-              }}
-            >
-              {sc}
-            </kbd>
-          ))}
-        </div>
-      ) : null}
-    </div>
+    <KBarResults
+      items={flattened.filter((i) => i !== NO_GROUP)}
+      onRender={({ item, active }) => (typeof item === 'string' ? <div>{item}</div> : <ResultItem action={item} active={active} />)}
+    />
   );
 };
 
 export default KBarRender;
+
+const ResultItem = forwardRef(
+  (
+    {
+      action,
+      active,
+    }: {
+      action: Action;
+      active: boolean;
+    },
+    ref: React.Ref<HTMLDivElement>
+  ) => {
+    const { theme } = useThemeContext();
+
+    return (
+      <div
+        ref={ref}
+        style={{
+          padding: '12px 16px',
+          background: active ? 'rgba(0 0 0 / 0.05)' : theme.kbarBackground,
+          borderLeft: `2px solid ${active ? theme.kbarColor : 'transparent'}`,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          cursor: 'pointer',
+        }}
+      >
+        <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+          {action.icon && action.icon}
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <span>{action.name}</span>
+            {action.subtitle && <span style={{ fontSize: 12 }}>{action.subtitle}</span>}
+          </div>
+        </div>
+        {action.shortcut?.length ? (
+          <div style={{ display: 'grid', gridAutoFlow: 'column', gap: '4px' }}>
+            {action.shortcut.map((sc) => (
+              <kbd
+                key={sc}
+                style={{
+                  padding: '4px 6px',
+                  background: 'rgba(0 0 0 / .1)',
+                  borderRadius: '4px',
+                }}
+              >
+                {sc}
+              </kbd>
+            ))}
+          </div>
+        ) : null}
+      </div>
+    );
+  }
+);
+
+ResultItem.displayName = 'ResultItem';

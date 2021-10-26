@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
-import { KBarPortal, KBarPositioner, KBarAnimator, KBarSearch, KBarResults, useKBar, VisualState } from 'kbar';
+import { KBarPortal, KBarPositioner, KBarAnimator, KBarSearch, useKBar, VisualState } from 'kbar';
 import { isMobile } from 'react-device-detect';
-import { animatorStyle, searchStyle, resultsStyle, KBarRender } from '../../components/KBar';
+import { animatorStyle, searchStyle, KBarRender } from '../../components/KBar';
 import { useThemeContext } from '../../hooks/useThemeContext';
 
 const KBarContent: FunctionComponent = () => {
@@ -26,7 +26,7 @@ const KBarContent: FunctionComponent = () => {
             readOnly={isMobile ? isSearchReadonly : false}
             onClick={() => setSearchReadonly(false)}
           />
-          <KBarResults style={resultsStyle} onRender={(action, handlers, state) => <KBarRender action={action} handlers={handlers} state={state} />} />
+          <KBarRender />
         </KBarAnimator>
       </KBarPositioner>
     </KBarPortal>

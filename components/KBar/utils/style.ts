@@ -9,11 +9,6 @@ export const searchStyle = {
   color: 'rgb(28 28 29)',
 };
 
-export const resultsStyle = {
-  maxHeight: 400,
-  overflow: 'auto',
-};
-
 export const animatorStyle = {
   maxWidth: '500px',
   width: '100%',
