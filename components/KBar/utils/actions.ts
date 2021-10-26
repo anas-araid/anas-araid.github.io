@@ -10,7 +10,6 @@ const action = (handleActionTheme: (value: boolean) => void): Action[] => {
       name: 'Home',
       shortcut: ['h'],
       keywords: 'back',
-      section: 'Navigation',
       perform: () => router.push('/'),
     },
     {
@@ -18,14 +17,12 @@ const action = (handleActionTheme: (value: boolean) => void): Action[] => {
       name: 'Resume',
       shortcut: ['r'],
       keywords: 'resume cv',
-      section: 'Navigation',
       perform: () => router.push('/resume'),
     },
     createAction({
       name: 'Github',
       shortcut: ['g', 'h'],
       keywords: 'sourcecode',
-      section: 'Navigation',
       perform: () => window.open('https://github.com/asdf1899', '_blank'),
     }),
     {
@@ -33,7 +30,6 @@ const action = (handleActionTheme: (value: boolean) => void): Action[] => {
       name: 'Linkedin',
       shortcut: ['l', 'd'],
       keywords: 'linkedin',
-      section: 'Navigation',
       perform: () => window.open('https://www.linkedin.com/in/anas-araid/', '_blank'),
     },
     {
@@ -41,7 +37,6 @@ const action = (handleActionTheme: (value: boolean) => void): Action[] => {
       name: 'Instagram',
       shortcut: ['i', 'g'],
       keywords: 'instagram social contact dm',
-      section: 'Navigation',
       perform: () => window.open('https://instagram.com/anas.araid', '_blank'),
     },
     {

@@ -10,7 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "kbar": "^0.1.0-beta.6",
+    "kbar": "^0.1.0-beta.15",
     "next": "11.1.2",
     "react": "17.0.2",
     "react-device-detect": "^2.0.0",
