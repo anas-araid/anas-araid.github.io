@@ -14,6 +14,10 @@ const KBarContent: FunctionComponent = () => {
 
   useEffect(() => {
     setSearchReadonly(visible);
+    // useDocumentLock() function
+    // KBar uses a simple implementation for preventing the underlying page content from scrolling when kbar is open.
+    // but is not necessary.
+    document.body.style.all = '';
   }, [visible]);
 
   return (
