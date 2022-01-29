@@ -20,8 +20,8 @@ body {
 
 ::selection {
   background: #1bffcd;
-  color: #fff;
-  -webkit-text-fill-color: #fff;
+  color: #000;
+  -webkit-text-fill-color: #000;
 }
 
 .underline--magical {

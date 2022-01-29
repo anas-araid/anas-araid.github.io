@@ -6,7 +6,7 @@ const THEMES = {
   dark: {
     backgroundColor: 'bg-black',
     textColor: 'text-white',
-    gradientText: 'from-pink-300 via-purple-300 to-indigo-400',
+    gradientText: 'from-green-300 to-blue-400',
     kbarBackground: 'rgb(28 28 29)',
     kbarColor: 'rgb(252 252 252)',
   },
