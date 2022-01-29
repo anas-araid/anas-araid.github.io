@@ -18,7 +18,7 @@ const Home: FunctionComponent = () => {
         .
       </h3>
       <h3 className='text-xl'>
-        Crafting amazing products at{' '}
+        Crafting digital products at{' '}
         <a onClick={() => window.open('https://belkadigital.com', '_blank')} className='cursor-pointer font-bold 0'>
           <b className={concatClassNames('underline--magical', isDark ? 'underline--dark' : 'underline--light')}>Belka</b>
         </a>

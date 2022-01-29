@@ -11,6 +11,7 @@
 
 * {
   font-family: 'ITC Avant Garde Gothic Std Book', sans-serif;
+  /* font-family: 'Inter', sans-serif; */
 }
 
 body {
@@ -38,6 +39,34 @@ body {
 .underline--magical:hover {
   background-size: 100% 150%;
 }
+
+/* CMD button animation */
+
+.cmd-animation:hover {
+  animation: forwards 0.2s rotate;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+}
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+}
+
 /* font */
 
 @font-face {
