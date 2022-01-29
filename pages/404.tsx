@@ -4,7 +4,6 @@ import { concatClassNames } from '../utils';
 
 export default function Custom404(): JSX.Element {
   const { isDark, theme } = useThemeContext();
-  console.log(isDark);
 
   return (
     <div className={concatClassNames('flex transition-all h-screen duration-300', theme.backgroundColor, theme.textColor)}>
