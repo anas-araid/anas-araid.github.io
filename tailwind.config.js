@@ -1,7 +1,18 @@
 module.exports = {
   purge: {
     content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}', './containers/**/*.{js,ts,jsx,tsx}'],
-    safelist: ['bg-black', 'text-white', 'from-pink-300', 'via-purple-300', ' to-indigo-400', 'from-pink-500', 'via-red-500', 'to-yellow-500'],
+    safelist: [
+      'bg-black',
+      'text-white',
+      'from-pink-300',
+      'via-purple-300',
+      ' to-indigo-400',
+      'from-pink-500',
+      'via-red-500',
+      'to-yellow-500',
+      'from-green-300',
+      'to-blue-400',
+    ],
   },
   theme: {
     extend: {
