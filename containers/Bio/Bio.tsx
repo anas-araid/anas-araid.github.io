@@ -1,19 +1,35 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, useEffect, useState } from 'react';
 import { useThemeContext } from '../../hooks/useThemeContext';
 import { concatClassNames } from '../../utils';
+import ConfettiExplosion from '@reonomy/react-confetti-explosion';
+
+const EXPLOSION_DURATION = 3000;
 
 const Bio: FunctionComponent = () => {
   const { isDark } = useThemeContext();
+  const [isExploding, setIsExploding] = useState(false);
+
+  useEffect(() => {
+    if (isExploding) {
+      setTimeout(() => {
+        setIsExploding(false);
+      }, EXPLOSION_DURATION);
+    }
+  }, [isExploding]);
 
   return (
     <div className='mt-20'>
+      <div className='absolute top-1/2 left-1/2'>
+        {isExploding && <ConfettiExplosion duration={EXPLOSION_DURATION} floorWidth={document.documentElement.offsetWidth} />}
+      </div>
+
       <h3 className='text-xl mt-12 font-light'>
         Well, I’m a non-award winning frontend developer, HCI undergraduate and maker of dad jokes without being a dad.
       </h3>
       <h3 className='text-xl mt-8 font-light'>
         Currently I’m working with good people and pushing pixels at{' '}
         <a onClick={() => window.open('https://belkadigital.com', '_blank')} className='cursor-pointer font-bold'>
-          <b className={concatClassNames('font-bold underline--magical', isDark ? 'underline--dark' : 'underline--light')}>Belka</b>
+          <b className={concatClassNames('font-bold underline--magical pt-1', isDark ? 'underline--dark' : 'underline--light')}>Belka</b>
         </a>
         .
       </h3>
@@ -25,7 +41,7 @@ const Bio: FunctionComponent = () => {
       <ul className='list-disc pl-8'>
         <li>
           <h3 className='text-xl font-light'>
-            I enjoy building things <span className='font-bold'>React</span> and <span className='font-bold'>TypeScript</span>.
+            I enjoy building things using <span className='font-bold'>React</span> and <span className='font-bold'>TypeScript</span>.
           </h3>
         </li>
         <li>
@@ -34,7 +50,7 @@ const Bio: FunctionComponent = () => {
         <li>
           <h3 className='text-xl font-light'>
             Designing{' '}
-            <span className='rainbow-gradient-bg p-1' style={{ color: 'white' }}>
+            <span onClick={() => setIsExploding(true)} className='underline--magical rainbow-gradient-bg pt-1 cursor-pointer hover:text-white'>
               memes
             </span>
             .
@@ -49,7 +65,7 @@ const Bio: FunctionComponent = () => {
       <h3 className='text-xl mt-8 mb-32 font-light'>
         Okay, now that you&apos;ve read this normie and cringe af bio 🌱 you can checkout my{' '}
         <a onClick={() => window.open('https://www.linkedin.com/in/anas-araid/', '_blank')} className='cursor-pointer font-bold 0'>
-          <b className={concatClassNames('font-bold underline--magical', isDark ? 'underline--dark' : 'underline--light')}>Linkedin</b>
+          <b className={concatClassNames('font-bold underline--magical pt-1', isDark ? 'underline--dark' : 'underline--light')}>Linkedin</b>
         </a>{' '}
         profile.
       </h3>

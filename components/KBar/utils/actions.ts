@@ -13,6 +13,13 @@ const action = (handleActionTheme: (value: boolean) => void): Action[] => {
       perform: () => router.push('/'),
     },
     {
+      id: 'aboutAction',
+      name: 'About',
+      shortcut: ['a'],
+      keywords: 'about bio meme',
+      perform: () => router.push('/about'),
+    },
+    {
       id: 'resumeAction',
       name: 'Resume',
       shortcut: ['r'],
@@ -31,13 +38,6 @@ const action = (handleActionTheme: (value: boolean) => void): Action[] => {
       shortcut: ['l', 'd'],
       keywords: 'linkedin',
       perform: () => window.open('https://www.linkedin.com/in/anas-araid/', '_blank'),
-    },
-    {
-      id: 'instagramAction',
-      name: 'Instagram',
-      shortcut: ['i', 'g'],
-      keywords: 'instagram social contact dm',
-      perform: () => window.open('https://instagram.com/anas.araid', '_blank'),
     },
     {
       id: 'theme',

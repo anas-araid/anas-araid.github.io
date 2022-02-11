@@ -1,6 +1,5 @@
 import { KBarProvider } from 'kbar';
-import React from 'react';
-import { concatClassNames } from '../../utils';
+import React, { useEffect } from 'react';
 import { actions } from '../../components/KBar';
 import { useThemeContext } from '../../hooks/useThemeContext';
 import { KBarContent } from '../KBarContent';
@@ -14,8 +13,12 @@ const Root = ({ Component, pageProps, router }: AppProps): JSX.Element => {
     setDarkMode(value);
   };
 
+  useEffect(() => {
+    document.body.className = `transition-all h-screen duration-300 ${theme.backgroundColor} ${theme.textColor}`;
+  }, [theme]);
+
   return (
-    <div className={concatClassNames('transition-all h-full duration-300', theme.backgroundColor, theme.textColor)}>
+    <div>
       <KBarProvider
         actions={actions(handleActionTheme)}
         options={{
