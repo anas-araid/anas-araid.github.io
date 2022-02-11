@@ -5,7 +5,7 @@ import { concatClassNames } from '../../utils';
 const Home: FunctionComponent = () => {
   const { isDark, theme } = useThemeContext();
   return (
-    <div className='mt-20'>
+    <div className='mt-20 h-screen'>
       <h1 className='text-4xl font-medium'>Anas Araid</h1>
       <h3 className='text-xl mt-12 mb-8 font-light'>
         Frontend developer, <span className='line-through'>designer</span> and firefighter based in{' '}

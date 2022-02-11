@@ -1,14 +1,12 @@
 import React, { useEffect } from 'react';
 import type { AppProps } from 'next/app';
 import '../styles/globals.css';
-import { useRouter } from 'next/dist/client/router';
 import * as ga from '../lib/ga';
 import { DocumentHead } from '../components/DocumentHead';
 import { ThemeProvider } from '../providers';
+import { Root } from '../containers/Root';
 
-const App = ({ Component, pageProps }: AppProps): JSX.Element => {
-  const router = useRouter();
-
+const App = ({ Component, pageProps, router }: AppProps): JSX.Element => {
   useEffect(() => {
     const handleRouteChange = (url: string) => {
       ga.pageview(url);
@@ -25,7 +23,7 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => {
     <>
       <DocumentHead />
       <ThemeProvider>
-        <Component {...pageProps} />
+        <Root pageProps={pageProps} Component={Component} router={router} />
       </ThemeProvider>
     </>
   );
