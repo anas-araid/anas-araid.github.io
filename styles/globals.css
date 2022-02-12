@@ -57,6 +57,26 @@ body {
   );
 }
 
+.doge {
+  opacity: 0;
+  animation: 3s linear doge-animation;
+}
+
+@keyframes doge-animation {
+  0% {
+    transform: rotate(0deg) scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(360deg) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(0deg) scale(0);
+  }
+}
+
 /* CMD button animation */
 
 .cmd-animation:hover {

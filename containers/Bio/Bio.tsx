@@ -2,6 +2,7 @@ import { FunctionComponent, useEffect, useState } from 'react';
 import { useThemeContext } from '../../hooks/useThemeContext';
 import { concatClassNames } from '../../utils';
 import ConfettiExplosion from '@reonomy/react-confetti-explosion';
+import Image from 'next/Image';
 
 const EXPLOSION_DURATION = 3000;
 
@@ -23,6 +24,10 @@ const Bio: FunctionComponent = () => {
         {isExploding && <ConfettiExplosion duration={EXPLOSION_DURATION} floorWidth={document.documentElement.offsetWidth} />}
       </div>
 
+      <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2'>
+        {isExploding && <Image className='doge' src='/assets/doge.png' width={500} height={500} />}
+      </div>
+
       <h3 className='text-xl mt-8 font-light'>
         Well, I’m a non-award winning frontend developer, HCI undergraduate and maker of dad jokes without being a dad.
       </h3>
@@ -37,11 +42,11 @@ const Bio: FunctionComponent = () => {
       <h3 className='text-xl mt-8 font-light'>
         I was born and raised in <span className='font-bold'>Trento</span>, a small city in the heart of the Italian Alps.{' '}
       </h3>
-      <h3 className='text-xl mt-8 font-light'>In my spare time </h3>
+      <h3 className='text-xl mt-8 font-light'>In my spare time I enjoy </h3>
       <ul className='list-disc pl-8'>
         <li>
           <h3 className='text-xl font-light'>
-            I enjoy building things using <span className='font-bold'>React</span> and <span className='font-bold'>TypeScript</span>.
+            Building things using <span className='font-bold'>React</span> and <span className='font-bold'>TypeScript</span>.
           </h3>
         </li>
         <li>
