@@ -2,7 +2,7 @@ import { FunctionComponent, useEffect, useState } from 'react';
 import { useThemeContext } from '../../hooks/useThemeContext';
 import { concatClassNames } from '../../utils';
 import ConfettiExplosion from '@reonomy/react-confetti-explosion';
-import Image from 'next/Image';
+import Image from 'next/image';
 
 const EXPLOSION_DURATION = 3000;
 
@@ -20,17 +20,17 @@ const Bio: FunctionComponent = () => {
 
   return (
     <div className='mt-20'>
-      <div className='absolute top-1/2 left-1/2'>
-        {isExploding && <ConfettiExplosion duration={EXPLOSION_DURATION} floorWidth={document.documentElement.offsetWidth} />}
-      </div>
-
-      <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2'>
-        {isExploding && <Image className='doge' src='/assets/doge.png' width={500} height={500} />}
-      </div>
-
       {isExploding && (
-        <div className='w-1/2 nyan absolute left-0 top-1/3'>
-          <img className='h-24' src='/assets/nyan.gif' />
+        <div>
+          <div className='absolute top-1/2 left-1/2'>
+            <ConfettiExplosion duration={EXPLOSION_DURATION} floorWidth={document.documentElement.offsetWidth} />
+          </div>
+          <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2'>
+            <Image className='doge' src='/assets/doge.png' width={500} height={500} />
+          </div>
+          <div className='w-1/2 nyan absolute left-0 top-1/3'>
+            <img className='h-24' src='/assets/nyan.gif' />
+          </div>
         </div>
       )}
       <h3 className='text-xl mt-8 font-light'>
