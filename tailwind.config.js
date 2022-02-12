@@ -3,10 +3,12 @@ module.exports = {
     content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}', './containers/**/*.{js,ts,jsx,tsx}'],
     safelist: [
       'bg-black',
+      'bg-white',
       'text-white',
+      'text-black',
       'from-pink-300',
       'via-purple-300',
-      ' to-indigo-400',
+      'to-indigo-400',
       'from-pink-500',
       'via-red-500',
       'to-yellow-500',
