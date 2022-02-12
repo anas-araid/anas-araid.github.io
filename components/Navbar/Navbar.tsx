@@ -3,30 +3,30 @@ import { useKBar, VisualState } from 'kbar';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
 import { KBarButton } from '../KBar';
 import { useThemeContext } from '../../hooks/useThemeContext';
-import Link from 'next/link';
+import { concatClassNames } from '../../utils';
 
-const Navbar: FunctionComponent = () => {
+const Navbar: FunctionComponent = (): JSX.Element => {
   const { query } = useKBar();
-  const { isDark, setDarkMode } = useThemeContext();
+  const { isDark, setDarkMode, theme } = useThemeContext();
+
+  const buttonClass = `${theme.backgroundColor} bg-opacity-80 transition-all duration-300 p-3 rounded-full cursor-pointer`;
 
   return (
-    <div className='flex mt-10 md:mt-20'>
+    <div className={concatClassNames('sticky top-0 flex pt-10 pb-10 md:pt-20')}>
       <div className='flex w-1/2 justify-start'>
-        <KBarButton
-          isDarkMode={isDark}
+        <div
+          className={buttonClass}
           onClick={() =>
             query.setVisualState((vs) => ([VisualState.animatingOut, VisualState.hidden].includes(vs) ? VisualState.animatingIn : VisualState.animatingOut))
           }
-        />
+        >
+          <KBarButton isDarkMode={isDark} />
+        </div>
       </div>
       <div className='flex w-1/2 justify-end m-auto'>
-        {/* <span className='mr-2 mt-0.5'>
-          <Link href='/'>home</Link>
-        </span>
-        <span className='mr-4 mt-0.5'>
-          <Link href='/about'>about</Link>
-        </span> */}
-        <DarkModeSwitch className='h-6 outline-none ease-out' checked={isDark} onChange={() => setDarkMode(!isDark)} />
+        <div className={buttonClass} onClick={() => setDarkMode(!isDark)}>
+          <DarkModeSwitch className='h-6 outline-none ease-out' checked={isDark} onChange={() => setDarkMode(!isDark)} />
+        </div>
       </div>
     </div>
   );

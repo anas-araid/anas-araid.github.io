@@ -23,7 +23,7 @@ const Bio: FunctionComponent = () => {
         {isExploding && <ConfettiExplosion duration={EXPLOSION_DURATION} floorWidth={document.documentElement.offsetWidth} />}
       </div>
 
-      <h3 className='text-xl mt-12 font-light'>
+      <h3 className='text-xl mt-8 font-light'>
         Well, I’m a non-award winning frontend developer, HCI undergraduate and maker of dad jokes without being a dad.
       </h3>
       <h3 className='text-xl mt-8 font-light'>
@@ -33,7 +33,7 @@ const Bio: FunctionComponent = () => {
         </a>
         .
       </h3>
-      <h3 className='text-2xl mt-8 font-light'>What else?</h3>
+      <h3 className='text-2xl mt-16 font-light'>What else?</h3>
       <h3 className='text-xl mt-8 font-light'>
         I was born and raised in <span className='font-bold'>Trento</span>, a small city in the heart of the Italian Alps.{' '}
       </h3>
@@ -61,9 +61,9 @@ const Bio: FunctionComponent = () => {
         </li>
       </ul>
 
-      <h3 className='text-2xl mt-8 font-light'>And that’s it.</h3>
+      <h3 className='text-2xl mt-16 font-light'>And that’s it.</h3>
       <h3 className='text-xl mt-8 mb-32 font-light'>
-        Okay, now that you&apos;ve read this normie and cringe af bio 🌱 you can checkout my{' '}
+        But if you’re still curious, you can checkout my{' '}
         <a onClick={() => window.open('https://www.linkedin.com/in/anas-araid/', '_blank')} className='cursor-pointer font-bold 0'>
           <b className={concatClassNames('font-bold underline--magical pt-1', isDark ? 'underline--dark' : 'underline--light')}>Linkedin</b>
         </a>{' '}
