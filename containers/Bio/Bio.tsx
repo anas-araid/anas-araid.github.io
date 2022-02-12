@@ -2,7 +2,6 @@ import { FunctionComponent, useEffect, useState } from 'react';
 import { useThemeContext } from '../../hooks/useThemeContext';
 import { concatClassNames } from '../../utils';
 import ConfettiExplosion from '@reonomy/react-confetti-explosion';
-import Image from 'next/image';
 
 const EXPLOSION_DURATION = 3000;
 
@@ -26,7 +25,7 @@ const Bio: FunctionComponent = () => {
             <ConfettiExplosion duration={EXPLOSION_DURATION} floorWidth={document.documentElement.offsetWidth} />
           </div>
           <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2'>
-            <Image className='doge' src='/assets/doge.png' width={500} height={500} />
+            <img className='doge h-80' src='/assets/doge.png' />
           </div>
           <div className='w-1/2 nyan absolute left-0 top-1/3'>
             <img className='h-24' src='/assets/nyan.gif' />
