@@ -28,6 +28,11 @@ const Bio: FunctionComponent = () => {
         {isExploding && <Image className='doge' src='/assets/doge.png' width={500} height={500} />}
       </div>
 
+      {isExploding && (
+        <div className='w-1/2 nyan absolute left-0 top-1/3'>
+          <img className='h-24' src='/assets/nyan.gif' />
+        </div>
+      )}
       <h3 className='text-xl mt-8 font-light'>
         Well, I’m a non-award winning frontend developer, HCI undergraduate and maker of dad jokes without being a dad.
       </h3>
