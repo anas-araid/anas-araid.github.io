@@ -72,9 +72,9 @@ const Bio: FunctionComponent = () => {
 
       <h3 className='text-2xl mt-16 font-light'>And that’s it.</h3>
       <h3 className='text-xl mt-8 mb-32 font-light'>
-        But if you’re still curious, you can checkout my{' '}
-        <a onClick={() => window.open('https://www.linkedin.com/in/anas-araid/', '_blank')} className='cursor-pointer font-bold 0'>
-          <b className={concatClassNames('font-bold underline--magical pt-1', isDark ? 'underline--dark' : 'underline--light')}>Linkedin</b>
+        But if you’re still curious, you can check out my{' '}
+        <a onClick={() => window.open('https://www.github.com/asdf1899/', '_blank')} className='cursor-pointer font-bold 0'>
+          <b className={concatClassNames('font-bold underline--magical pt-1', isDark ? 'underline--dark' : 'underline--light')}>GitHub</b>
         </a>{' '}
         profile.
       </h3>
