@@ -31,13 +31,27 @@ body {
   transition: background-size 0.25s ease-in;
 }
 .underline--light {
-  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  background-image: linear-gradient(120deg, #1bffcd 0%, #8fd3f4 100%);
 }
 .underline--dark {
   background-image: linear-gradient(to right, rgb(236, 72, 153), rgb(239, 68, 68));
 }
 .underline--magical:hover {
   background-size: 100% 150%;
+}
+
+.gradient-text-light {
+  background-image: linear-gradient(120deg, #1bffcd 0%, #8fd3f4 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-dark {
+  background-image: linear-gradient(to right, rgb(236, 72, 153), rgb(239, 68, 68));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .rainbow-gradient-bg {
