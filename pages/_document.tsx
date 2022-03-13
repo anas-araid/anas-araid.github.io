@@ -20,6 +20,8 @@ class CustomDocument extends Document {
           <meta name='author' content='Anas Araid' />
           <meta name='keywords' content='portfolio, anas, araid' />
 
+          <link rel='icon' href='favicon.svg' sizes='any' type='image/svg+xml' />
+
           <meta property='og:type' content='website' />
           <meta property='og:url' content='https://anasaraid.me/' />
           <meta property='og:title' content='Anas Araid' />

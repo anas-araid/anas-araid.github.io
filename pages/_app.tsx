@@ -19,7 +19,7 @@ const App = ({ Component, pageProps, router }: AppProps): JSX.Element => {
   }, [router.events]);
 
   useEffect(() => {
-    console.log('Bruh 👀 \n\n-> github.com/asdf1899');
+    console.log('👀 \n\n-> github.com/asdf1899');
   }, []);
 
   return (
