@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
 import { useThemeContext } from '../../hooks/useThemeContext';
-import { concatClassNames } from '../../utils';
+import { concatClassNames } from '../../utils/tailwind';
 
 const Home: FunctionComponent = () => {
   const { isDark, theme } = useThemeContext();

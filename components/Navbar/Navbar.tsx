@@ -3,7 +3,7 @@ import { useKBar, VisualState } from 'kbar';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
 import { KBarButton } from '../KBar';
 import { useThemeContext } from '../../hooks/useThemeContext';
-import { concatClassNames } from '../../utils';
+import { concatClassNames } from '../../utils/tailwind';
 
 const Navbar: FunctionComponent = (): JSX.Element => {
   const { query } = useKBar();

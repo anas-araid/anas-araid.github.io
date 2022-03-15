@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useThemeContext } from '../hooks/useThemeContext';
-import { concatClassNames } from '../utils';
+import { concatClassNames } from '../utils/tailwind';
 
 export default function Custom404(): JSX.Element {
   const { isDark } = useThemeContext();

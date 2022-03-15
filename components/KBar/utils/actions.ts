@@ -1,10 +1,8 @@
-import { Action, createAction } from 'kbar';
-import { useRouter } from 'next/dist/client/router';
+import { Action } from 'kbar';
+import { NextRouter } from 'next/router';
 
-const action = (handleActionTheme: (value: boolean) => void): Action[] => {
-  const router = useRouter();
-
-  return [
+const action = (handleActionTheme: (value: boolean) => void, router: NextRouter): Action[] => {
+  const actions = [
     {
       id: 'homeAction',
       name: 'Home',
@@ -26,12 +24,13 @@ const action = (handleActionTheme: (value: boolean) => void): Action[] => {
       keywords: 'resume cv',
       perform: () => router.push('/resume'),
     },
-    createAction({
+    {
+      id: 'githubAction',
       name: 'Github',
       shortcut: ['g', 'h'],
       keywords: 'sourcecode',
       perform: () => window.open('https://github.com/asdf1899', '_blank'),
-    }),
+    },
     {
       id: 'linkedinAction',
       name: 'Linkedin',
@@ -66,6 +65,8 @@ const action = (handleActionTheme: (value: boolean) => void): Action[] => {
       parent: 'theme',
     },
   ];
+
+  return actions;
 };
 
 export default action;

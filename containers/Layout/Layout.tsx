@@ -1,7 +1,7 @@
 import { useKBar, VisualState } from 'kbar';
 import { AppProps } from 'next/app';
 import { Navbar } from '../../components/Navbar';
-import { concatClassNames } from '../../utils';
+import { concatClassNames } from '../../utils/tailwind';
 
 const Layout = ({ pageProps, Component }: AppProps): JSX.Element => {
   const { visible } = useKBar((state) => ({

@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import { concatClassNames } from '../../utils';
+import { concatClassNames } from '../../utils/tailwind';
 
 interface IKBarButtonProps {
   isDarkMode: boolean;

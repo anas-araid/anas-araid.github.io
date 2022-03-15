@@ -1,6 +1,6 @@
 import { createContext, FunctionComponent } from 'react';
 import { useDarkMode } from '../hooks/useDarkMode';
-import { IThemeContext } from '../models/theme';
+import { IThemeContext } from '../types/theme';
 
 const THEMES = {
   dark: {
