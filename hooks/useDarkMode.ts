@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export function useDarkMode() {
+export function useDarkMode(): readonly [boolean, (value: boolean) => void] {
   const [isDark, setDark] = useState<boolean>(true);
 
   useEffect(() => {
