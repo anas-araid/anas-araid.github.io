@@ -8,7 +8,7 @@ import { concatClassNames } from '../../utils/tailwind';
 const Navbar: FunctionComponent = (): JSX.Element => {
   const { query } = useKBar();
   const { isDark, setDarkMode, theme } = useThemeContext();
-  // BAD CODE - preventing navbar bg flickering
+  // BAD CODE - preventing navbar bg from flickering
   const [background, setBackground] = useState('transparent');
 
   useEffect(() => {
@@ -16,7 +16,7 @@ const Navbar: FunctionComponent = (): JSX.Element => {
   }, [isDark]);
 
   return (
-    <div className={concatClassNames(background, 'bg-opacity-95 rounded-b-md transition-all duration-300 sticky top-0 flex pt-10 pb-10 md:pt-20 w-full z-20')}>
+    <div className={concatClassNames(background, 'bg-opacity-90 rounded-b-md transition-all duration-300 sticky top-0 flex pt-10 pb-10 md:pt-20 w-full z-20')}>
       <div className='flex w-1/2 justify-start z-50'>
         <div
           onClick={() =>

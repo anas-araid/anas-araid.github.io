@@ -1,11 +1,11 @@
-import { FunctionComponent, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useThemeContext } from '../../hooks/useThemeContext';
 import { concatClassNames } from '../../utils/tailwind';
 import ConfettiExplosion from '@reonomy/react-confetti-explosion';
 
 const EXPLOSION_DURATION = 3000;
 
-const Bio: FunctionComponent = () => {
+const Bio = (): JSX.Element => {
   const { isDark } = useThemeContext();
   const [isExploding, setIsExploding] = useState(false);
 
