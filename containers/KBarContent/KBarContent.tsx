@@ -3,16 +3,22 @@ import { KBarPortal, KBarPositioner, KBarAnimator, KBarSearch, useKBar, VisualSt
 import { isMobile } from 'react-device-detect';
 import { animatorStyle, searchStyle, KBarRender, actions } from '../../components/KBar';
 import { useThemeContext } from '../../hooks/useThemeContext';
-import { isAboutPageActive, isResumePageActive } from '../../api/featureFlag';
 import { useRouter } from 'next/router';
+import { useAppSelector } from '../../hooks/useAppSelector';
+import { RootState } from '../../store';
 
 const KBarContent: FunctionComponent = () => {
-  const [isSearchReadonly, setSearchReadonly] = useState(true);
-  const [actionList, setActionList] = useState<Action[]>([]);
+  const isAboutPageActive = useAppSelector((state: RootState) => state.featureFlags.isAboutPageActive);
+  const isResumePageActive = useAppSelector((state: RootState) => state.featureFlags.isResumePageActive);
+  const isPostPageActive = useAppSelector((state: RootState) => state.featureFlags.isPostPageActive);
+  const isLoading = useAppSelector((state: RootState) => state.featureFlags.isLoading);
 
   const { theme, setDarkMode } = useThemeContext();
   const { query } = useKBar();
   const router = useRouter();
+
+  const [isSearchReadonly, setSearchReadonly] = useState(true);
+  const [actionList, setActionList] = useState<Action[]>([]);
 
   const { visible } = useKBar((state) => ({
     visible: state.visualState !== VisualState.hidden,
@@ -23,25 +29,10 @@ const KBarContent: FunctionComponent = () => {
   };
 
   useEffect(() => {
-    async function getActions() {
-      const action = actions(handleActionTheme, router);
-      const isAboutActive = await isAboutPageActive();
-      const isResumeActive = await isResumePageActive();
-
-      setActionList(
-        action.filter((value) => {
-          if (!isAboutActive && value.id === 'aboutAction') {
-            return;
-          }
-          if (!isResumeActive && value.id === 'resumeAction') {
-            return;
-          }
-          return value;
-        })
-      );
+    if (!isLoading) {
+      setActionList(actions(handleActionTheme, router, { isAboutPageActive, isResumePageActive, isPostPageActive }));
     }
-    getActions();
-  }, []);
+  }, [isLoading]);
 
   useEffect(() => {
     setSearchReadonly(visible);

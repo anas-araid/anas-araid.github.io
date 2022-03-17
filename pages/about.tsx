@@ -1,13 +1,18 @@
 import React from 'react';
 import type { NextPage } from 'next';
 import { Bio } from '../containers/Bio';
-import { isAboutPageActive } from '../api/featureFlag';
 import { PageWrapper } from '../containers/PageWrapper';
+import { useAppSelector } from '../hooks/useAppSelector';
+import { RootState } from '../store';
 
-const About: NextPage = () => (
-  <PageWrapper flag={isAboutPageActive}>
-    <Bio />
-  </PageWrapper>
-);
+const About: NextPage = () => {
+  const isAboutPageActive = useAppSelector((state: RootState) => state.featureFlags.isAboutPageActive);
+
+  return (
+    <PageWrapper isActive={isAboutPageActive}>
+      <Bio />
+    </PageWrapper>
+  );
+};
 
 export default About;

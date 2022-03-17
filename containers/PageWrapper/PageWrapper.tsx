@@ -1,30 +1,23 @@
-import React, { FunctionComponent, useEffect, useState } from 'react';
+import React, { FunctionComponent } from 'react';
 import { useRouter } from 'next/router';
+import { useAppSelector } from '../../hooks/useAppSelector';
+import { RootState } from '../../store';
 
 interface IPageWrapper {
-  flag: () => Promise<boolean>;
+  isActive: boolean;
   children: JSX.Element;
 }
 
-const PageWrapper: FunctionComponent<IPageWrapper> = ({ children, flag: activationFunction }): JSX.Element => {
-  const [loading, setLoading] = useState(true);
-  const [isPageActive, setIsPageActive] = useState(false);
+const PageWrapper: FunctionComponent<IPageWrapper> = ({ children, isActive }): JSX.Element => {
   const router = useRouter();
+  const isLoading = useAppSelector((state: RootState) => state.featureFlags.isLoading);
 
-  useEffect(() => {
-    async function isVisible() {
-      setIsPageActive(await activationFunction());
-      setLoading(false);
-    }
-    isVisible();
-  });
-
-  if (isPageActive && !loading) {
-    return children;
+  if (!isActive && !isLoading) {
+    router.push('/404');
   }
 
-  if (!isPageActive && !loading) {
-    router.push('/404');
+  if (isActive && !isLoading) {
+    return children;
   }
 
   return (

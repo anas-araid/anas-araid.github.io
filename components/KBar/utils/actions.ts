@@ -1,7 +1,16 @@
 import { Action } from 'kbar';
 import { NextRouter } from 'next/router';
+interface IPageActivation {
+  isAboutPageActive: boolean;
+  isResumePageActive: boolean;
+  isPostPageActive: boolean;
+}
 
-const action = (handleActionTheme: (value: boolean) => void, router: NextRouter): Action[] => {
+const action = (
+  handleActionTheme: (value: boolean) => void,
+  router: NextRouter,
+  { isAboutPageActive, isResumePageActive, isPostPageActive }: IPageActivation
+): Action[] => {
   const actions = [
     {
       id: 'homeAction',
@@ -66,7 +75,17 @@ const action = (handleActionTheme: (value: boolean) => void, router: NextRouter)
     },
   ];
 
-  return actions;
+  const actionList = actions.filter((value) => {
+    if (!isAboutPageActive && value.id === 'aboutAction') {
+      return;
+    }
+    if (!isResumePageActive && value.id === 'resumeAction') {
+      return;
+    }
+    return value;
+  });
+
+  return actionList;
 };
 
 export default action;
