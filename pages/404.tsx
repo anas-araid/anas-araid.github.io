@@ -13,7 +13,7 @@ export default function Custom404(): JSX.Element {
         </div>
         <div className='flex flex-row m-auto'>
           <div className={concatClassNames('border-r-2 mr-5 pr-5 my-auto', isDark ? 'border-white' : 'border-black')}>
-            <h1 className='font-medium text-4xl inline'>404</h1>
+            <h1 className='font-normal text-4xl inline'>404</h1>
           </div>
           <div className='m-auto'>
             <h1 className='text-lg'>Where&apos;s the page, Lebowski?</h1>
