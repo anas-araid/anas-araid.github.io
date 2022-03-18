@@ -89,6 +89,9 @@ const action = (
     if (!isResumePageActive && value.id === 'resumeAction') {
       return;
     }
+    if (!isPostPageActive && value.id === 'postsAction') {
+      return;
+    }
     return value;
   });
 
