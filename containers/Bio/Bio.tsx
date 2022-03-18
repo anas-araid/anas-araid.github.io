@@ -42,7 +42,7 @@ const Bio = (): JSX.Element => {
         </a>
         .
       </p>
-      <h2 className='text-2xl mt-16 font-medium'>What else?</h2>
+      <h2 className='text-2xl mt-10 font-medium'>What else?</h2>
       <p className='text-xl mt-8 font-normal'>
         I was born and raised in <span className='font-medium'>Trento</span>, a small city in the heart of the Italian Alps.{' '}
       </p>
@@ -70,7 +70,7 @@ const Bio = (): JSX.Element => {
         </li>
       </ul>
 
-      <h2 className='text-2xl mt-16 font-medium '>And that’s it.</h2>
+      <h2 className='text-2xl mt-10 font-medium '>And that’s it.</h2>
       <p className='text-xl mt-8 mb-32 font-normal'>
         But if you’re still curious, you can check out my{' '}
         <a onClick={() => window.open('https://www.github.com/asdf1899/', '_blank')} className='cursor-pointer font-medium'>

@@ -34,6 +34,13 @@ const action = (
       perform: () => router.push('/resume'),
     },
     {
+      id: 'postsAction',
+      name: 'Posts',
+      shortcut: ['p'],
+      keywords: 'post posts writing',
+      perform: () => router.push('/posts'),
+    },
+    {
       id: 'githubAction',
       name: 'Github',
       shortcut: ['g', 'h'],

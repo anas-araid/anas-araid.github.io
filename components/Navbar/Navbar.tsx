@@ -11,10 +11,9 @@ import { RootState } from '../../store';
 const Navbar: FunctionComponent = (): JSX.Element => {
   const { query } = useKBar();
   const { isDark, setDarkMode, theme } = useThemeContext();
+
   const isAboutPageActive = useAppSelector((state: RootState) => state.featureFlags.isAboutPageActive);
-  // const isResumePageActive = useAppSelector((state: RootState) => state.featureFlags.isResumePageActive);
   const isPostPageActive = useAppSelector((state: RootState) => state.featureFlags.isPostPageActive);
-  const isLoading = useAppSelector((state: RootState) => state.featureFlags.isLoading);
 
   // BAD CODE - preventing navbar bg from flickering
   const [background, setBackground] = useState('transparent');
@@ -35,14 +34,19 @@ const Navbar: FunctionComponent = (): JSX.Element => {
         </div>
       </div>
       <div className='flex w-1/2 justify-end m-auto'>
-        {!isLoading && isAboutPageActive && (
+        {isAboutPageActive || isPostPageActive ? (
+          <Link href='/'>
+            <a className='mr-6'>Home</a>
+          </Link>
+        ) : null}
+        {isAboutPageActive && (
           <Link href='/about'>
             <a className='mr-6'>About</a>
           </Link>
         )}
-        {!isLoading && isPostPageActive && (
+        {isPostPageActive && (
           <Link href='/posts'>
-            <a className='mr-6'>Post</a>
+            <a className='mr-6'>Posts</a>
           </Link>
         )}
         <div onClick={() => setDarkMode(!isDark)}>
