@@ -7,6 +7,7 @@ import { concatClassNames } from '../../utils/tailwind';
 import Link from 'next/link';
 import { useAppSelector } from '../../hooks/useAppSelector';
 import { RootState } from '../../store';
+import { isMobile } from 'react-device-detect';
 
 const Navbar: FunctionComponent = (): JSX.Element => {
   const { query } = useKBar();
@@ -34,20 +35,24 @@ const Navbar: FunctionComponent = (): JSX.Element => {
         </div>
       </div>
       <div className='flex w-1/2 justify-end m-auto'>
-        {isAboutPageActive || isPostPageActive ? (
-          <Link href='/'>
-            <a className='mr-6'>Home</a>
-          </Link>
-        ) : null}
-        {isAboutPageActive && (
-          <Link href='/about'>
-            <a className='mr-6'>About</a>
-          </Link>
-        )}
-        {isPostPageActive && (
-          <Link href='/posts'>
-            <a className='mr-6'>Posts</a>
-          </Link>
+        {!isMobile && (
+          <span>
+            {isAboutPageActive || isPostPageActive ? (
+              <Link href='/'>
+                <a className='mr-6'>Home</a>
+              </Link>
+            ) : null}
+            {isAboutPageActive && (
+              <Link href='/about'>
+                <a className='mr-6'>About</a>
+              </Link>
+            )}
+            {isPostPageActive && (
+              <Link href='/posts'>
+                <a className='mr-6'>Posts</a>
+              </Link>
+            )}
+          </span>
         )}
         <div onClick={() => setDarkMode(!isDark)}>
           <DarkModeSwitch className='h-6 outline-none ease-out' checked={isDark} onChange={() => setDarkMode(!isDark)} />

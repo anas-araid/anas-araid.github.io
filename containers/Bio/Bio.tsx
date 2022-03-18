@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useThemeContext } from '../../hooks/useThemeContext';
 import { concatClassNames } from '../../utils/tailwind';
 import ConfettiExplosion from '@reonomy/react-confetti-explosion';
+import Sparkles from '../../components/Sparkles/Sparkles';
 
 const EXPLOSION_DURATION = 3000;
 
@@ -60,7 +61,7 @@ const Bio = (): JSX.Element => {
           <p className='text-xl font-normal'>
             Designing{' '}
             <span onClick={() => setIsExploding(true)} className='underline--magical rainbow-gradient-bg pt-1 cursor-pointer hover:text-white'>
-              memes
+              <Sparkles>memes</Sparkles>
             </span>
             .
           </p>
