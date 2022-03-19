@@ -8,8 +8,10 @@ import Link from 'next/link';
 import { useAppSelector } from '../../hooks/useAppSelector';
 import { RootState } from '../../store';
 import { isMobile } from 'react-device-detect';
+import { useRouter } from 'next/router';
 
 const Navbar: FunctionComponent = (): JSX.Element => {
+  const router = useRouter();
   const { query } = useKBar();
   const { isDark, setDarkMode, theme } = useThemeContext();
 
@@ -39,17 +41,17 @@ const Navbar: FunctionComponent = (): JSX.Element => {
           <span>
             {isAboutPageActive || isPostPageActive ? (
               <Link href='/'>
-                <a className='mr-6'>Home</a>
+                <a className={concatClassNames('mr-6', router.pathname === '/' ? 'opacity-60' : '')}>Home</a>
               </Link>
             ) : null}
             {isAboutPageActive && (
               <Link href='/about'>
-                <a className='mr-6'>About</a>
+                <a className={concatClassNames('mr-6', router.pathname === '/about' ? 'opacity-60' : '')}>About</a>
               </Link>
             )}
             {isPostPageActive && (
               <Link href='/posts'>
-                <a className='mr-6'>Posts</a>
+                <a className={concatClassNames('mr-6', router.pathname === '/post' ? 'opacity-50' : '')}>Posts</a>
               </Link>
             )}
           </span>
