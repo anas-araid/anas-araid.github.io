@@ -23,6 +23,8 @@ jobs:
         run: npm run build && npm run export && touch ./out/.nojekyll
         env:
           NEXT_PUBLIC_GOOGLE_ANALYTICS: ${{ secrets.NEXT_PUBLIC_GOOGLE_ANALYTICS }}
+          NEXT_PUBLIC_AIRTABLE_API_KEY: ${{ secrets.NEXT_PUBLIC_AIRTABLE_API_KEY }}
+          NEXT_PUBLIC_AIRTABLE_BASE_ID: ${{ secrets.NEXT_PUBLIC_AIRTABLE_BASE_ID }}
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.0
