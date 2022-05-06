@@ -1,14 +1,15 @@
-import React, { FunctionComponent } from 'react';
 import { useRouter } from 'next/router';
+import React, { FunctionComponent } from 'react';
+import { Loading } from '../../components/loading';
 import { useAppSelector } from '../../hooks/useAppSelector';
 import { RootState } from '../../store';
 
-interface IPageWrapper {
+interface IFeatureFlag {
   isActive: boolean;
   children: JSX.Element;
 }
 
-const PageWrapper: FunctionComponent<IPageWrapper> = ({ children, isActive }): JSX.Element => {
+const FeatureFlag: FunctionComponent<IFeatureFlag> = ({ children, isActive }): JSX.Element => {
   const router = useRouter();
   const isLoading = useAppSelector((state: RootState) => state.featureFlags.isLoading);
 
@@ -20,11 +21,7 @@ const PageWrapper: FunctionComponent<IPageWrapper> = ({ children, isActive }): J
     return children;
   }
 
-  return (
-    <div className='flex m-auto h-full w-full'>
-      <img src='/assets/loading.svg' className='m-auto h-52' alt='loading' />
-    </div>
-  );
+  return <Loading />;
 };
 
-export default PageWrapper;
+export default FeatureFlag;

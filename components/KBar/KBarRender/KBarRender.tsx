@@ -1,7 +1,7 @@
-import { useMatches, Action, KBarResults } from 'kbar';
+import { Action, KBarResults, useMatches } from 'kbar';
 import { NO_GROUP } from 'kbar/lib/useMatches';
 import React, { forwardRef } from 'react';
-import { useThemeContext } from '../../hooks/useThemeContext';
+import { useThemeContext } from '../../../hooks/useThemeContext';
 
 const KBarRender = (): JSX.Element => {
   const groups = useMatches();

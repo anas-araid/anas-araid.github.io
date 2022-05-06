@@ -1,5 +1,5 @@
 import { combineReducers, createStore } from '@reduxjs/toolkit';
-import featureFlags from '../features/featureFlags/featureFlagsSlice';
+import featureFlags from '../features/featureFlag/featureFlagsSlice';
 
 export const rootReducer = combineReducers({
   featureFlags,

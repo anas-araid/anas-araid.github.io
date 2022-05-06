@@ -1,14 +1,16 @@
-import { useEffect, useState } from 'react';
-import { useThemeContext } from '../../hooks/useThemeContext';
-import { concatClassNames } from '../../utils/tailwind';
 import ConfettiExplosion from '@reonomy/react-confetti-explosion';
-import Sparkles from '../../components/Sparkles/Sparkles';
+import { useEffect, useState } from 'react';
+import { Sparkles } from '../../components/sparkles';
+import { useThemeContext } from '../../hooks/useThemeContext';
+import { useTrackLink } from '../../hooks/useTrackLink';
+import { concatClassNames } from '../../utils/tailwind';
 
 const EXPLOSION_DURATION = 3000;
 
 const Bio = (): JSX.Element => {
   const { isDark } = useThemeContext();
   const [isExploding, setIsExploding] = useState(false);
+  const openLink = useTrackLink();
 
   useEffect(() => {
     if (isExploding) {
@@ -16,6 +18,9 @@ const Bio = (): JSX.Element => {
         setIsExploding(false);
       }, EXPLOSION_DURATION);
     }
+    return () => {
+      setIsExploding(false);
+    };
   }, [isExploding]);
 
   return (
@@ -38,7 +43,7 @@ const Bio = (): JSX.Element => {
       </p>
       <p className='text-xl mt-8 font-normal'>
         Currently I’m working with good people and pushing pixels at{' '}
-        <a onClick={() => window.open('https://belkadigital.com', '_blank')} className='cursor-pointer font-medium'>
+        <a onClick={() => openLink('https://belkadigital.com')} className='cursor-pointer font-medium'>
           <b className={concatClassNames('font-medium underline--magical pt-1', isDark ? 'underline--dark' : 'underline--light')}>Belka</b>
         </a>
         .
@@ -67,14 +72,14 @@ const Bio = (): JSX.Element => {
           </p>
         </li>
         <li>
-          <p className='text-xl font-normal'>Rescuing cats from trees. Yes, for real.</p>
+          <p className='text-xl font-normal'>Rescuing cats from trees.</p>
         </li>
       </ul>
 
       <h2 className='text-2xl mt-10 font-medium '>And that’s it.</h2>
       <p className='text-xl mt-8 mb-32 font-normal'>
         But if you’re still curious, you can check out my{' '}
-        <a onClick={() => window.open('https://www.github.com/asdf1899/', '_blank')} className='cursor-pointer font-medium'>
+        <a onClick={() => openLink('https://www.github.com/asdf1899/')} className='cursor-pointer font-medium'>
           <b className={concatClassNames('font-medium underline--magical pt-1', isDark ? 'underline--dark' : 'underline--light')}>GitHub</b>
         </a>{' '}
         profile.

@@ -1,14 +1,14 @@
-import React, { FunctionComponent, useEffect, useState } from 'react';
 import { useKBar, VisualState } from 'kbar';
-import { DarkModeSwitch } from 'react-toggle-dark-mode';
-import { KBarButton } from '../KBar';
-import { useThemeContext } from '../../hooks/useThemeContext';
-import { concatClassNames } from '../../utils/tailwind';
 import Link from 'next/link';
-import { useAppSelector } from '../../hooks/useAppSelector';
-import { RootState } from '../../store';
-import { isMobile } from 'react-device-detect';
 import { useRouter } from 'next/router';
+import React, { FunctionComponent, useEffect, useState } from 'react';
+import { isMobile } from 'react-device-detect';
+import { DarkModeSwitch } from 'react-toggle-dark-mode';
+import { useAppSelector } from '../../hooks/useAppSelector';
+import { useThemeContext } from '../../hooks/useThemeContext';
+import { RootState } from '../../store';
+import { concatClassNames } from '../../utils/tailwind';
+import { KBarButton } from '../kbar/KBarButton';
 
 const Navbar: FunctionComponent = (): JSX.Element => {
   const router = useRouter();

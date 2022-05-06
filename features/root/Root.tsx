@@ -1,30 +1,30 @@
 import { KBarProvider } from 'kbar';
-import React, { useEffect } from 'react';
-import { useThemeContext } from '../../hooks/useThemeContext';
-import { KBarContent } from '../KBarContent';
 import { AppProps } from 'next/app';
-import { Layout } from '../Layout';
-import { isAboutPageActive, isResumePageActive, isPostsPageActive } from '../../api/featureFlag';
-import { setAboutPageActive, setResumePageActive, setPostPageActive, setIsLoading } from '../../features/featureFlags/featureFlagsSlice';
-import { useAppDispatch } from '../../hooks/useAppDispatch';
+import React, { useEffect } from 'react';
+import { isAboutPageActive, isPostsPageActive, isResumePageActive } from '../../api/featureFlag';
+import { KBarContent } from '../../components/kbar/KBarContent';
+import { useDispatchAll } from '../../hooks/useDispatchAll';
+import { useThemeContext } from '../../hooks/useThemeContext';
+import { setAboutPageActive, setIsLoading, setPostPageActive, setResumePageActive } from '../featureFlag/featureFlagsSlice';
+import { Layout } from '../layout';
 
 const Root = ({ Component, pageProps, router }: AppProps): JSX.Element => {
   const { theme } = useThemeContext();
-  const dispatch = useAppDispatch();
+  const dispatchAll = useDispatchAll();
 
   useEffect(() => {
     document.body.className = `transition-all h-screen duration-300 ${theme.backgroundColor} ${theme.textColor}`;
   }, [theme]);
 
   useEffect(() => {
-    async function fetch() {
-      dispatch(setAboutPageActive(await isAboutPageActive()));
-      dispatch(setResumePageActive(await isResumePageActive()));
-      dispatch(setPostPageActive(await isPostsPageActive()));
-      dispatch(setIsLoading(false));
-    }
-
-    fetch();
+    (async () => {
+      dispatchAll([
+        setAboutPageActive(await isAboutPageActive()),
+        setResumePageActive(await isResumePageActive()),
+        setPostPageActive(await isPostsPageActive()),
+        setIsLoading(false),
+      ]);
+    })();
   }, []);
 
   return (

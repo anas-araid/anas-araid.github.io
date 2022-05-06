@@ -16,7 +16,7 @@ export default function Custom404(): JSX.Element {
             <h1 className='font-normal text-4xl inline'>404</h1>
           </div>
           <div className='m-auto'>
-            <h1 className='text-lg'>Where&apos;s the page, Lebowski?</h1>
+            <h1 className='text-lg'>Where&apos;s the page, Vincent?</h1>
             <Link href='/'>
               <a className='text-sm underline'>Go back home</a>
             </Link>
