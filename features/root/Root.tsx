@@ -2,7 +2,7 @@ import { KBarProvider } from 'kbar';
 import { AppProps } from 'next/app';
 import React, { useEffect } from 'react';
 import { isAboutPageActive, isPostsPageActive, isResumePageActive } from '../../api/featureFlag';
-import { KBarContent } from '../../components/kbar/KBarContent';
+import { KBarContent } from '../../components/Kbar/KBarContent';
 import { useDispatchAll } from '../../hooks/useDispatchAll';
 import { useThemeContext } from '../../hooks/useThemeContext';
 import { setAboutPageActive, setIsLoading, setPostPageActive, setResumePageActive } from '../featureFlag/featureFlagsSlice';
