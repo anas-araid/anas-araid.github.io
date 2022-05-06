@@ -1,6 +1,7 @@
 import { useKBar, VisualState } from 'kbar';
 import { AppProps } from 'next/app';
-import { Navbar } from '../../components/Navbar';
+import { Loading } from '../../components/loading';
+import { Navbar } from '../../components/navbar';
 import { useAppSelector } from '../../hooks/useAppSelector';
 import { RootState } from '../../store';
 import { concatClassNames } from '../../utils/tailwind';
@@ -20,9 +21,7 @@ const Layout = ({ pageProps, Component }: AppProps): JSX.Element => {
       </div>
     </div>
   ) : (
-    <div className='flex m-auto h-screen w-full'>
-      <img src='/assets/loading.svg' className='m-auto h-52' alt='loading' />
-    </div>
+    <Loading />
   );
 };
 

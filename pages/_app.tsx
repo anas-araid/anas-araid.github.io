@@ -12,7 +12,6 @@ const App = ({ Component, pageProps, router }: AppProps): JSX.Element => {
     const handleRouteChange = (url: string) => {
       ga.pageview(url);
     };
-
     router.events.on('routeChangeComplete', handleRouteChange);
 
     return () => {

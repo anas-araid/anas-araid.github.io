@@ -1,6 +1,6 @@
 import ConfettiExplosion from '@reonomy/react-confetti-explosion';
 import { useEffect, useState } from 'react';
-import Sparkles from '../../components/Sparkles/Sparkles';
+import { Sparkles } from '../../components/sparkles';
 import { useThemeContext } from '../../hooks/useThemeContext';
 import { useTrackLink } from '../../hooks/useTrackLink';
 import { concatClassNames } from '../../utils/tailwind';
@@ -18,6 +18,9 @@ const Bio = (): JSX.Element => {
         setIsExploding(false);
       }, EXPLOSION_DURATION);
     }
+    return () => {
+      setIsExploding(false);
+    };
   }, [isExploding]);
 
   return (

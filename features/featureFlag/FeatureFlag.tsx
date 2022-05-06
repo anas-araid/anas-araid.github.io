@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import React, { FunctionComponent } from 'react';
+import { Loading } from '../../components/loading';
 import { useAppSelector } from '../../hooks/useAppSelector';
 import { RootState } from '../../store';
 
@@ -20,11 +21,7 @@ const FeatureFlag: FunctionComponent<IFeatureFlag> = ({ children, isActive }): J
     return children;
   }
 
-  return (
-    <div className='flex m-auto h-full w-full'>
-      <img src='/assets/loading.svg' className='m-auto h-52' alt='loading' />
-    </div>
-  );
+  return <Loading />;
 };
 
 export default FeatureFlag;
