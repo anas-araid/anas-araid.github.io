@@ -8,7 +8,7 @@ import { useAppSelector } from '../../hooks/useAppSelector';
 import { useThemeContext } from '../../hooks/useThemeContext';
 import { RootState } from '../../store';
 import { concatClassNames } from '../../utils/tailwind';
-import { KBarButton } from '../Kbar/KBarButton';
+import { KBarButton } from '../kbar/KBarButton';
 
 const Navbar: FunctionComponent = (): JSX.Element => {
   const router = useRouter();
