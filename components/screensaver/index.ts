@@ -1,3 +1,3 @@
-import ScreenSaver from './screenSaver';
+import ScreenSaver from './ScreenSaver';
 
 export { ScreenSaver };
