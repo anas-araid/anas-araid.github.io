@@ -1,12 +1,12 @@
 import { KBarProvider } from 'kbar';
-import React, { useEffect } from 'react';
-import { useThemeContext } from '../../hooks/useThemeContext';
-import { KBarContent } from '../KBarContent';
 import { AppProps } from 'next/app';
-import { Layout } from '../Layout';
-import { isAboutPageActive, isResumePageActive, isPostsPageActive } from '../../api/featureFlag';
-import { setAboutPageActive, setResumePageActive, setPostPageActive, setIsLoading } from '../../features/featureFlags/featureFlagsSlice';
+import React, { useEffect } from 'react';
+import { isAboutPageActive, isPostsPageActive, isResumePageActive } from '../../api/featureFlag';
+import { KBarContent } from '../../components/KBar/KBarContent';
 import { useAppDispatch } from '../../hooks/useAppDispatch';
+import { useThemeContext } from '../../hooks/useThemeContext';
+import { setAboutPageActive, setIsLoading, setPostPageActive, setResumePageActive } from '../featureFlag/featureFlagsSlice';
+import { Layout } from '../layout';
 
 const Root = ({ Component, pageProps, router }: AppProps): JSX.Element => {
   const { theme } = useThemeContext();

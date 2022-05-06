@@ -1,11 +1,13 @@
-import React, { FunctionComponent, useEffect, useState } from 'react';
-import { KBarPortal, KBarPositioner, KBarAnimator, KBarSearch, useKBar, VisualState, Action, useRegisterActions } from 'kbar';
-import { isMobile } from 'react-device-detect';
-import { animatorStyle, searchStyle, KBarRender, actions } from '../../components/KBar';
-import { useThemeContext } from '../../hooks/useThemeContext';
+import { Action, KBarAnimator, KBarPortal, KBarPositioner, KBarSearch, useKBar, useRegisterActions, VisualState } from 'kbar';
 import { useRouter } from 'next/router';
-import { useAppSelector } from '../../hooks/useAppSelector';
-import { RootState } from '../../store';
+import React, { FunctionComponent, useEffect, useState } from 'react';
+import { isMobile } from 'react-device-detect';
+import { useAppSelector } from '../../../hooks/useAppSelector';
+import { useThemeContext } from '../../../hooks/useThemeContext';
+import { RootState } from '../../../store';
+import { KBarRender } from '../KBarRender';
+import actions from '../utils/actions';
+import { animatorStyle, searchStyle } from '../utils/style';
 
 const KBarContent: FunctionComponent = () => {
   const isAboutPageActive = useAppSelector((state: RootState) => state.featureFlags.isAboutPageActive);
