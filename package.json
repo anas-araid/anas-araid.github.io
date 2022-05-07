@@ -9,12 +9,19 @@
     "export": "next export",
     "lint": "next lint"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run lint"
+    }
+  },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.0",
     "@reonomy/react-confetti-explosion": "^1.0.32",
     "airtable": "^0.11.2",
     "dayjs": "^1.11.2",
+    "husky": "^7.0.4",
     "kbar": "^0.1.0-beta.15",
+    "lint-staged": "^12.4.1",
     "next": "11.1.2",
     "react": "17.0.2",
     "react-device-detect": "^2.1.2",
