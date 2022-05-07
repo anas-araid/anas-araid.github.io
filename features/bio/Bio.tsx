@@ -18,9 +18,6 @@ const Bio = (): JSX.Element => {
         setIsExploding(false);
       }, EXPLOSION_DURATION);
     }
-    return () => {
-      setIsExploding(false);
-    };
   }, [isExploding]);
 
   return (

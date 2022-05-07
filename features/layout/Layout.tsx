@@ -29,7 +29,7 @@ const Layout = ({ pageProps, Component }: AppProps): JSX.Element => {
   }
 
   return !isLoading ? (
-    <div className={concatClassNames('flex justify-center px-5', visible ? 'opacity-25' : '')}>
+    <div className={concatClassNames('flex justify-center px-5 transition-all', visible ? 'opacity-25' : '')}>
       <div className='max-w-2xl w-full'>
         <Navbar />
         <Component {...pageProps} />
