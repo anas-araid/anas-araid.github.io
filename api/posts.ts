@@ -11,4 +11,5 @@ export const getPosts = async (): Promise<TMinifyRecord<TPostsFieldSet>[]> =>
       .all()
   );
 
-export const getPostByRecordID = async (recordID: string): Promise<TMinifyRecord<TPostsFieldSet>> => minifyRecord(await table(POSTS).find(recordID));
+export const getPostByRecordID = async (recordID: string): Promise<TMinifyRecord<TPostsFieldSet>> =>
+  minifyRecord(await table<Partial<TPostsFieldSet>>(POSTS).find(recordID));

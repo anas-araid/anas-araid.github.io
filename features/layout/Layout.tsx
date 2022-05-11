@@ -1,6 +1,5 @@
 import { useKBar, VisualState } from 'kbar';
 import { AppProps } from 'next/app';
-import { useEffect } from 'react';
 import { Loading } from '../../components/loading';
 import { Navbar } from '../../components/navbar';
 import { ScreenSaver } from '../../components/screensaver';
@@ -15,14 +14,7 @@ const Layout = ({ pageProps, Component }: AppProps): JSX.Element => {
   }));
   const isLoading = useAppSelector((state: RootState) => state.featureFlags.isLoading);
 
-  const { inactive, resetTimer } = useWindowInactivity();
-
-  useEffect(() => {
-    const events = ['mousedown', 'mousemove', 'keypress', 'scroll', 'touchstart'];
-    events.forEach((name) => {
-      document.addEventListener(name, resetTimer, true);
-    });
-  }, []);
+  const inactive = useWindowInactivity();
 
   if (inactive) {
     return <ScreenSaver />;
