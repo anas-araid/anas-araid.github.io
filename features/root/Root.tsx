@@ -1,16 +1,18 @@
 import { KBarProvider } from 'kbar';
 import { AppProps } from 'next/app';
 import React, { useEffect } from 'react';
-import { isAboutPageActive, isPostsPageActive, isResumePageActive } from '../../api/featureFlag';
+import { getActivePages } from '../../api/featureFlag';
 import { KBarContent } from '../../components/kbar/KBarContent';
-import { useDispatchAll } from '../../hooks/useDispatchAll';
+import { useAppDispatch } from '../../hooks/useAppDispatch';
 import { useThemeContext } from '../../hooks/useThemeContext';
-import { setAboutPageActive, setIsLoading, setPostPageActive, setResumePageActive } from '../featureFlag/featureFlagsSlice';
+import { EPAGE, TSettingsFieldSet } from '../../types/airtable';
+import { getMinifiedRecords } from '../../utils/airtable';
+import { setActivePages } from '../featureFlag/featureFlagsSlice';
 import { Layout } from '../layout';
 
 const Root = ({ Component, pageProps, router }: AppProps): JSX.Element => {
   const { theme } = useThemeContext();
-  const dispatchAll = useDispatchAll();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     document.body.className = `transition-all h-screen duration-300 ${theme.backgroundColor} ${theme.textColor}`;
@@ -18,12 +20,17 @@ const Root = ({ Component, pageProps, router }: AppProps): JSX.Element => {
 
   useEffect(() => {
     (async () => {
-      dispatchAll([
-        setAboutPageActive(await isAboutPageActive()),
-        setResumePageActive(await isResumePageActive()),
-        setPostPageActive(await isPostsPageActive()),
-        setIsLoading(false),
-      ]);
+      const records = await getActivePages();
+      const pages = getMinifiedRecords<TSettingsFieldSet>(records).map((record) => record.fields);
+
+      dispatch(
+        setActivePages({
+          isAboutPageActive: pages.find((page) => page.name === EPAGE.ABOUT)?.isActive || false,
+          isPostPageActive: pages.find((page) => page.name === EPAGE.POST)?.isActive || false,
+          isResumePageActive: pages.find((page) => page.name === EPAGE.RESUME)?.isActive || false,
+          isLoading: false,
+        })
+      );
     })();
   }, []);
 

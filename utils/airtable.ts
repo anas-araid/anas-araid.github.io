@@ -1,9 +1,9 @@
-import { Records, Record } from 'airtable';
-import { TPostsFieldSet, TMinifyRecord } from '../types/airtable';
+import { FieldSet, Record, Records } from 'airtable';
+import { TMinifyRecord } from '../types/airtable';
 
-export const getMinifiedRecords = (records: Records<Partial<TPostsFieldSet>>): TMinifyRecord<TPostsFieldSet>[] => records.map((record) => minifyRecord(record));
+export const getMinifiedRecords = <T>(records: Records<Partial<T & FieldSet>>): TMinifyRecord<T>[] => records.map((record) => minifyRecord(record));
 
-export const minifyRecord = (record: Record<Partial<TPostsFieldSet>>): TMinifyRecord<TPostsFieldSet> => ({
+export const minifyRecord = <T>(record: Record<T & FieldSet>): TMinifyRecord<T> => ({
   id: record.id,
   fields: record.fields,
 });

@@ -18,17 +18,9 @@ export const featureFlagSlice = createSlice({
   name: 'featureFlag',
   initialState,
   reducers: {
-    setAboutPageActive: (state, action: PayloadAction<boolean>) => ({
+    setActivePages: (state, action: PayloadAction<FeatureFlagState>) => ({
       ...state,
-      isAboutPageActive: action.payload,
-    }),
-    setResumePageActive: (state, action: PayloadAction<boolean>) => ({
-      ...state,
-      isResumePageActive: action.payload,
-    }),
-    setPostPageActive: (state, action: PayloadAction<boolean>) => ({
-      ...state,
-      isPostPageActive: action.payload,
+      ...action.payload,
     }),
     setIsLoading: (state, action: PayloadAction<boolean>) => ({
       ...state,
@@ -37,6 +29,6 @@ export const featureFlagSlice = createSlice({
   },
 });
 
-export const { setAboutPageActive, setResumePageActive, setPostPageActive, setIsLoading } = featureFlagSlice.actions;
+export const { setIsLoading, setActivePages } = featureFlagSlice.actions;
 
 export default featureFlagSlice.reducer;

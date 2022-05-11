@@ -7,8 +7,14 @@ export type TPostsFieldSet = {
   content: string;
 } & FieldSet;
 
+export enum EPAGE {
+  ABOUT = 'about_page',
+  POST = 'post_page',
+  RESUME = 'resume_page',
+}
+
 export type TSettingsFieldSet = {
-  name: string;
+  name: EPAGE;
   isActive: boolean;
 } & FieldSet;
 
