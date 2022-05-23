@@ -4,7 +4,7 @@ export const useTrackLink =
   () =>
   (url: string): void => {
     captureEvent(OPEN_LINK_EVENT, {
-      url,
+      event_label: url,
     });
     window.open(url, '_blank');
   };

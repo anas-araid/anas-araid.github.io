@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const DEFAULT_TIMER = 30000;
+const DEFAULT_TIMER = 45000;
 
 export const useWindowInactivity = (timer = DEFAULT_TIMER): boolean => {
   const [inactive, setInactive] = useState(false);
