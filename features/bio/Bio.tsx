@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { Sparkles } from '../../components/sparkles';
 import { useThemeContext } from '../../hooks/useThemeContext';
 import { useTrackLink } from '../../hooks/useTrackLink';
+import { captureEvent, CLICK_EVENT } from '../../lib/analytics';
 import { concatClassNames } from '../../utils/tailwind';
 
 const EXPLOSION_DURATION = 3000;
@@ -20,6 +21,13 @@ const Bio = (): JSX.Element => {
     }
   }, [isExploding]);
 
+  const handleMemesClick = () => {
+    captureEvent(CLICK_EVENT, {
+      event_label: 'memes_link',
+    });
+    setIsExploding(true);
+  }
+
   return (
     <div className='mt-20'>
       {isExploding && (
@@ -36,7 +44,7 @@ const Bio = (): JSX.Element => {
         </div>
       )}
       <p className='text-xl mt-8 font-font-normal'>
-        Well, I’m a non-award winning frontend developer, HCI undergraduate and maker of dad jokes without being a dad.
+        Well, I’m a non-award winning frontend developer, Human-Computer Interaction graduate and maker of dad jokes without being a dad.
       </p>
       <p className='text-xl mt-8 font-normal'>
         Currently I’m working with good people and pushing pixels at{' '}
@@ -62,7 +70,7 @@ const Bio = (): JSX.Element => {
         <li>
           <p className='text-xl font-normal'>
             Designing{' '}
-            <span onClick={() => setIsExploding(true)} className='underline--magical rainbow-gradient-bg pt-1 cursor-pointer hover:text-white'>
+            <span onClick={() => handleMemesClick()} className='underline--magical rainbow-gradient-bg pt-1 cursor-pointer hover:text-white'>
               <Sparkles>memes</Sparkles>
             </span>
             .
@@ -75,11 +83,10 @@ const Bio = (): JSX.Element => {
 
       <h2 className='text-2xl mt-10 font-medium '>And that’s it.</h2>
       <p className='text-xl mt-8 mb-32 font-normal'>
-        But if you’re still curious, you can check out my{' '}
-        <a onClick={() => openLink('https://www.github.com/asdf1899/')} className='cursor-pointer font-medium'>
-          <b className={concatClassNames('font-medium underline--magical pt-1', isDark ? 'underline--dark' : 'underline--light')}>GitHub</b>
-        </a>{' '}
-        profile.
+        The best way to contact me is on{' '}
+        <a onClick={() => openLink('https://twitter.com/anas_araid')} className='cursor-pointer font-medium'>
+          <b className={concatClassNames('font-medium underline--magical pt-1', isDark ? 'underline--dark' : 'underline--light')}>Twitter</b>
+        </a>.
       </p>
     </div>
   );

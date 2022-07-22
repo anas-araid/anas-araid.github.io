@@ -1,4 +1,5 @@
 export const OPEN_LINK_EVENT = 'open_link_event';
+export const CLICK_EVENT = 'click_event';
 const DEVELOPMENT = 'development';
 
 // log the pageview with their URL
