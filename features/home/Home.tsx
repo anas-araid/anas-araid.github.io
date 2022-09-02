@@ -11,7 +11,7 @@ const Home: FunctionComponent = () => {
     <div className='mt-20'>
       <h1 className='text-4xl font-normal'>Anas Araid</h1>
       <h3 className='text-xl mt-12 mb-8 font-normal'>
-        Frontend developer, <span className='line-through'>designer</span> and firefighter based in{' '}
+        Multidisciplinary frontend developer, <span className='line-through'>designer</span> and firefighter based in{' '}
         <a
           onClick={() => openLink('https://goo.gl/maps/6fnYAANFEEsi1Mce7')}
           className={concatClassNames('cursor-pointer font-medium text-gradient bg-gradient-to-br', theme.gradientText)}

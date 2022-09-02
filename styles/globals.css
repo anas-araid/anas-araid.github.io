@@ -24,6 +24,10 @@ body {
   -webkit-text-fill-color: #000;
 }
 
+.shiny-list {
+  list-style-type: "✦  ";
+}
+
 .underline--magical {
   background-repeat: no-repeat;
   background-size: 100% 0.2em;

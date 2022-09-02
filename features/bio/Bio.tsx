@@ -55,13 +55,13 @@ const Bio = (): JSX.Element => {
       </p>
       <h2 className='text-2xl mt-10 font-medium'>What else?</h2>
       <p className='text-xl mt-8 font-normal'>
-        I was born and raised in <span className='font-medium'>Trento</span>, a small city in the heart of the Italian Alps.{' '}
+        I was born and raised in <u>Trento</u>, a small city in the heart of the Italian Alps.{' '}
       </p>
       <p className='text-xl mt-8 font-normal'>In my spare time I enjoy </p>
-      <ul className='list-disc pl-8'>
+      <ul className='pl-8 shiny-list'>
         <li>
           <p className='text-xl font-normal'>
-            Building things using <span className='font-medium'>React</span> and <span className='font-medium'>TypeScript</span>.
+            Building things using <u>React</u> and <u>TypeScript</u>.
           </p>
         </li>
         <li>
