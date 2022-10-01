@@ -1,5 +1,7 @@
 import { Action } from 'kbar';
 import { NextRouter } from 'next/router';
+// import { HomeAlt } from '@styled-icons/boxicons-regular/HomeAlt'
+
 interface IPageActivation {
   isAboutPageActive: boolean;
   isResumePageActive: boolean;
@@ -18,6 +20,7 @@ const action = (
       shortcut: ['h'],
       keywords: 'back',
       section: "Navigation",
+      // icon: HomeAlt,
       perform: () => router.push('/'),
     },
     {
