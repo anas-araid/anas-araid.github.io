@@ -58,9 +58,9 @@ const ResultItem = forwardRef(
         }}
       >
         <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-          {action.icon && action.icon}
+          {action.icon && <span style={{ marginRight: '0.5rem'}}>{action.icon}</span>}
           <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <span>{action.name}</span>
+            <span style={{fontSize: '14px', fontWeight: 400}}>{action.name}</span>
             {action.subtitle && <span style={{ fontSize: 12 }}>{action.subtitle}</span>}
           </div>
         </div>

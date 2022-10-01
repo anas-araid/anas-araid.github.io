@@ -25,7 +25,9 @@
     "react-redux": "^7.2.6",
     "react-rough-notation": "^1.0.3",
     "react-toggle-dark-mode": "^1.0.4",
-    "react-tooltip": "^4.2.21"
+    "react-tooltip": "^4.2.21",
+    "styled-components": "^5.3.6",
+    "styled-icons": "^10.46.0"
   },
   "devDependencies": {
     "@types/gtag.js": "^0.0.7",
