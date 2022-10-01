@@ -15,10 +15,16 @@ const KBarRender = (): JSX.Element => {
     [groups]
   );
 
+  const renderSection = (item: string) => (
+    <div className='px-4 py-2 opacity-50 text-xs'>
+      {item}
+    </div>
+  )
+
   return (
     <KBarResults
       items={flattened.filter((i) => i !== NO_GROUP)}
-      onRender={({ item, active }) => (typeof item === 'string' ? <div>{item}</div> : <ResultItem action={item} active={active} />)}
+      onRender={({ item, active }) => (typeof item === 'string' ? renderSection(item) : <ResultItem action={item} active={active} />)}
     />
   );
 };
@@ -52,9 +58,9 @@ const ResultItem = forwardRef(
         }}
       >
         <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-          {action.icon && action.icon}
+          {action.icon && <span style={{ marginRight: '0.5rem'}}>{action.icon}</span>}
           <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <span>{action.name}</span>
+            <span style={{fontSize: '14px', fontWeight: 400}}>{action.name}</span>
             {action.subtitle && <span style={{ fontSize: 12 }}>{action.subtitle}</span>}
           </div>
         </div>
