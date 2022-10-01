@@ -17,6 +17,7 @@ const action = (
       name: 'Home',
       shortcut: ['h'],
       keywords: 'back',
+      section: "Navigation",
       perform: () => router.push('/'),
     },
     {
@@ -24,6 +25,7 @@ const action = (
       name: 'About',
       shortcut: ['a'],
       keywords: 'about bio meme',
+      section: "Navigation",
       perform: () => router.push('/about'),
     },
     {
@@ -31,6 +33,7 @@ const action = (
       name: 'Resume',
       shortcut: ['r'],
       keywords: 'resume cv',
+      section: "Navigation",
       perform: () => router.push('/resume'),
     },
     {
@@ -41,25 +44,35 @@ const action = (
       perform: () => router.push('/posts'),
     },
     {
+      id: 'twitterAction',
+      name: 'Twitter',
+      shortcut: ['t', 'w'],
+      keywords: 'twitter',
+      section: "Stay in touch",
+      perform: () => window.open('https://www.twitter.com/anas_araid/', '_blank'),
+    },
+    // {
+    //   id: 'linkedinAction',
+    //   name: 'Linkedin',
+    //   shortcut: ['l', 'd'],
+    //   keywords: 'linkedin',
+    //   section: "Stay in touch",
+    //   perform: () => window.open('https://www.linkedin.com/in/anas-araid/', '_blank'),
+    // },
+    {
       id: 'githubAction',
       name: 'Github',
       shortcut: ['g', 'h'],
       keywords: 'sourcecode',
+      section: "Stay in touch",
       perform: () => window.open('https://github.com/asdf1899', '_blank'),
-    },
-    {
-      id: 'linkedinAction',
-      name: 'Linkedin',
-      shortcut: ['l', 'd'],
-      keywords: 'linkedin',
-      perform: () => window.open('https://www.linkedin.com/in/anas-araid/', '_blank'),
     },
     {
       id: 'theme',
       name: 'Change theme…',
       shortcut: [],
       keywords: 'interface color dark light theme',
-      section: '',
+      section: 'Theme',
       children: ['darkTheme', 'lightTheme'],
     },
     {

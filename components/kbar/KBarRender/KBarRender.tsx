@@ -15,10 +15,16 @@ const KBarRender = (): JSX.Element => {
     [groups]
   );
 
+  const renderSection = (item: string) => (
+    <div className='px-4 py-2 opacity-50 text-xs'>
+      {item}
+    </div>
+  )
+
   return (
     <KBarResults
       items={flattened.filter((i) => i !== NO_GROUP)}
-      onRender={({ item, active }) => (typeof item === 'string' ? <div>{item}</div> : <ResultItem action={item} active={active} />)}
+      onRender={({ item, active }) => (typeof item === 'string' ? renderSection(item) : <ResultItem action={item} active={active} />)}
     />
   );
 };
