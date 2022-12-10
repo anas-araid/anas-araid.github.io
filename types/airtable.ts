@@ -11,6 +11,7 @@ export enum EPAGE {
   ABOUT = 'about_page',
   POST = 'post_page',
   RESUME = 'resume_page',
+  LINKS = 'links_page',
 }
 
 export type TSettingsFieldSet = {

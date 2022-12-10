@@ -1,8 +1,7 @@
 import { Action } from 'kbar';
 import { NextRouter } from 'next/router';
 import { Home as HomeIcon } from '@styled-icons/feather/Home'
-import { Twitter as TwitterIcon } from '@styled-icons/feather/Twitter'
-import { Github as GithubIcon } from '@styled-icons/feather/Github'
+import { Link as LinkIcon } from '@styled-icons/feather/Link'
 import { DarkTheme as DarkThemeIcon } from '@styled-icons/fluentui-system-regular/DarkTheme'
 import { Info as InfoIcon } from '@styled-icons/fluentui-system-regular/Info'
 import { Sun as SunIcon } from '@styled-icons/feather/Sun'
@@ -54,14 +53,23 @@ const action = (
       perform: () => router.push('/posts'),
     },
     {
-      id: 'twitterAction',
-      name: 'Twitter',
-      shortcut: ['t', 'w'],
-      keywords: 'twitter',
+      id: 'linksAction',
+      name: 'Links',
+      shortcut: ['l', 'k'],
+      keywords: 'link contact github linkedin twitter',
       section: "Stay in touch",
-      icon: <TwitterIcon size={19} />,
-      perform: () => window.open('https://www.twitter.com/anas_araid/', '_blank'),
+      icon: <LinkIcon size={19} />,
+      perform: () => router.push('/links'),
     },
+    // {
+    //   id: 'twitterAction',
+    //   name: 'Twitter',
+    //   shortcut: ['t', 'w'],
+    //   keywords: 'twitter',
+    //   section: "Stay in touch",
+    //   icon: <TwitterIcon size={19} />,
+    //   perform: () => window.open('https://www.twitter.com/anas_araid/', '_blank'),
+    // },
     // {
     //   id: 'linkedinAction',
     //   name: 'Linkedin',
@@ -70,15 +78,15 @@ const action = (
     //   section: "Stay in touch",
     //   perform: () => window.open('https://www.linkedin.com/in/anas-araid/', '_blank'),
     // },
-    {
-      id: 'githubAction',
-      name: 'Github',
-      shortcut: ['g', 'h'],
-      keywords: 'sourcecode',
-      section: "Stay in touch",
-      icon: <GithubIcon size={19} />,
-      perform: () => window.open('https://github.com/asdf1899', '_blank'),
-    },
+    // {
+    //   id: 'githubAction',
+    //   name: 'Github',
+    //   shortcut: ['g', 'h'],
+    //   keywords: 'sourcecode',
+    //   section: "Stay in touch",
+    //   icon: <GithubIcon size={19} />,
+    //   perform: () => window.open('https://github.com/asdf1899', '_blank'),
+    // },
     {
       id: 'theme',
       name: 'Change theme…',
