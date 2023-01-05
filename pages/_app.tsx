@@ -41,7 +41,7 @@ const App = ({ Component, pageProps, router }: AppProps): JSX.Element => {
         <meta property='og:url' content='https://anasaraid.me/' />
         <meta property='og:title' content='Anas Araid' />
         <meta property='og:description' content='Mostly a developer, occasionally a firefighter, definitely not a designer.' />
-        <meta property="og:image" content="https://anasaraid.me/assets/og.png"/>
+        <meta property="og:image" content="https://anasaraid.me/og.png"/>
         <meta property="og:image:width" content="1200"/>
         <meta property="og:image:height" content="630"/>
 
