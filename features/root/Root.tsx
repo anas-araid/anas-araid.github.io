@@ -28,6 +28,7 @@ const Root = ({ Component, pageProps, router }: AppProps): JSX.Element => {
           isAboutPageActive: pages.find((page) => page.name === EPAGE.ABOUT)?.isActive || false,
           isPostPageActive: pages.find((page) => page.name === EPAGE.POST)?.isActive || false,
           isResumePageActive: pages.find((page) => page.name === EPAGE.RESUME)?.isActive || false,
+          isLinkPageActive: pages.find((page) => page.name === EPAGE.LINKS)?.isActive || false,
           isLoading: false,
         })
       );

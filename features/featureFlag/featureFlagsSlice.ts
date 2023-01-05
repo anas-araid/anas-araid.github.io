@@ -4,6 +4,7 @@ interface FeatureFlagState {
   isAboutPageActive: boolean;
   isResumePageActive: boolean;
   isPostPageActive: boolean;
+  isLinkPageActive: boolean;
   isLoading: boolean;
 }
 
@@ -11,6 +12,7 @@ const initialState: FeatureFlagState = {
   isAboutPageActive: false,
   isResumePageActive: false,
   isPostPageActive: false,
+  isLinkPageActive: false,
   isLoading: true,
 };
 
