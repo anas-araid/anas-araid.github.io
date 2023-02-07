@@ -8,9 +8,12 @@ export const pageview = (url: string): void => {
   const targetId: string = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS || '';
 
   if (env !== DEVELOPMENT) {
-    window.gtag('config', targetId, {
-      page_path: url,
-    });
+    if (window.gtag) {
+      window.gtag('config', targetId, {
+        page_path: url,
+      });
+    }
+
   }
 };
 
@@ -20,6 +23,8 @@ export const captureEvent = (action: string, params?: TParams): void => {
   const env = process.env.NODE_ENV;
 
   if (env !== DEVELOPMENT) {
-    window.gtag('event', action, params);
+    if (window.gtag) {
+      window.gtag('event', action, params);
+    }
   }
 };
