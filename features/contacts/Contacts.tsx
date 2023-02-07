@@ -7,6 +7,7 @@ import { Twitter as TwitterIcon } from '@styled-icons/feather/Twitter'
 import { Linkedin as LinkedinIcon } from '@styled-icons/feather/Linkedin'
 import { Instagram as InstagramIcon } from '@styled-icons/feather/Instagram'
 import { Mail as MailIcon } from '@styled-icons/feather/Mail'
+import { EMAIL, GITHUB_URL, INSTAGRAM_URL, LINKEDIN_URL, TWITTER_URL } from '../../constants';
 
 interface ILink{
   text: string;
@@ -22,27 +23,27 @@ const Contacts: FunctionComponent = () => {
   const links: ILink[] = [
     {
       text: 'Github',
-      url: 'https://github.com/asdf1899',
+      url: GITHUB_URL,
       icon: <GithubIcon size={19} />,
     },
     {
       text: 'Twitter',
-      url: 'https://twitter.com/anas_araid',
+      url: TWITTER_URL,
       icon: <TwitterIcon size={19} />,
     },
     {
       text: 'Linkedin',
-      url: 'https://linkedin.com/in/anas-araid',
+      url: LINKEDIN_URL,
       icon: <LinkedinIcon size={19} />,
     },
     {
       text: 'Instagram',
-      url: 'https://instagram.com/anas.araid',
+      url: INSTAGRAM_URL,
       icon: <InstagramIcon size={19} />,
     },
     {
       text: 'Email',
-      url: 'mailto:araid.anas99@gmail.com',
+      url: `mailto:${EMAIL}`,
       icon: <MailIcon size={19} />,
     }
   ];

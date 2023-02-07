@@ -40,18 +40,18 @@ const Navbar: FunctionComponent = (): JSX.Element => {
         {!isMobile && (
           <span>
             {isAboutPageActive || isPostPageActive ? (
-              <Link href='/'>
-                <a className={concatClassNames('mr-6', router.pathname === '/' ? 'opacity-60' : '')}>Home</a>
+              <Link href='/' className={concatClassNames('mr-6', router.pathname === '/' ? 'opacity-60' : '')}>
+                Home
               </Link>
             ) : null}
             {isAboutPageActive && (
-              <Link href='/about'>
-                <a className={concatClassNames('mr-6', router.pathname === '/about' ? 'opacity-60' : '')}>About</a>
+              <Link href='/about' className={concatClassNames('mr-6', router.pathname === '/about' ? 'opacity-60' : '')}>
+                About
               </Link>
             )}
             {isPostPageActive && (
-              <Link href='/posts'>
-                <a className={concatClassNames('mr-6', router.pathname === '/post' ? 'opacity-50' : '')}>Posts</a>
+              <Link href='/posts' className={concatClassNames('mr-6', router.pathname === '/post' ? 'opacity-50' : '')}>
+                Posts
               </Link>
             )}
           </span>

@@ -1,6 +1,7 @@
-import ConfettiExplosion from '@reonomy/react-confetti-explosion';
+import ConfettiExplosion from 'react-confetti-explosion';
 import { useEffect, useState } from 'react';
 import { Sparkles } from '../../components/sparkles';
+import { TWITTER_URL } from '../../constants';
 import { useThemeContext } from '../../hooks/useThemeContext';
 import { useTrackLink } from '../../hooks/useTrackLink';
 import { captureEvent, CLICK_EVENT } from '../../lib/analytics';
@@ -33,7 +34,7 @@ const Bio = (): JSX.Element => {
       {isExploding && (
         <div>
           <div className='absolute top-1/2 left-1/2  z-50'>
-            <ConfettiExplosion duration={EXPLOSION_DURATION} floorWidth={document.documentElement.offsetWidth} />
+            <ConfettiExplosion duration={EXPLOSION_DURATION} />
           </div>
           <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 z-50'>
             <img className='doge h-80' src='/assets/doge.png' />
@@ -84,7 +85,7 @@ const Bio = (): JSX.Element => {
       <h2 className='text-2xl mt-10 font-medium '>And that’s it.</h2>
       <p className='text-xl mt-8 mb-32 font-normal'>
         The best way to contact me is on{' '}
-        <a onClick={() => openLink('https://twitter.com/anas_araid')} className='cursor-pointer font-medium'>
+        <a onClick={() => openLink(TWITTER_URL)} className='cursor-pointer font-medium'>
           <b className={concatClassNames('font-medium underline--magical pt-1', isDark ? 'underline--dark' : 'underline--light')}>Twitter</b>
         </a>.
       </p>
