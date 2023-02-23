@@ -9,6 +9,8 @@ const THEMES = {
     gradientText: 'gradient-text-light',
     kbarBackground: 'rgb(28 28 29)',
     kbarColor: 'rgb(252 252 252)',
+    homeTitle: 'home-title-dark',
+    belkaLogo: 'white'
   },
   light: {
     backgroundColor: 'bg-white',
@@ -16,6 +18,8 @@ const THEMES = {
     gradientText: 'gradient-text-dark',
     kbarBackground: 'rgb(252 252 252)',
     kbarColor: 'rgb(28 28 29)',
+    homeTitle: 'home-title-light',
+    belkaLogo: 'black'
   },
 };
 

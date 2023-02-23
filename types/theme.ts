@@ -10,4 +10,6 @@ interface ITheme {
   gradientText: string;
   kbarBackground: string;
   kbarColor: string;
+  homeTitle: string;
+  belkaLogo: string;
 }
