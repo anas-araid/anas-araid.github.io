@@ -59,14 +59,16 @@ body {
 }
 
 .home-title-dark {
-  background-image: linear-gradient(to right, rgb(255, 255, 255), rgba(0, 0, 0, 0.2));
+  background-image: radial-gradient(65% 100% at 50% 50%,#fff 40%,hsla(0,0%,100%,.4) 100%);
+  width: max-content;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  /* background-image: linear-gradient(to right, rgb(255, 255, 255), rgba(0, 0, 0, 0.2)); */
 }
 
 .home-title-light {
-  background-image: linear-gradient(to right, rgba(0, 0, 0), rgba(255, 255, 255, 0.1));
+  background-image: linear-gradient(to right, rgba(0, 0, 0), rgba(255, 255, 255, 0.1) );
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
