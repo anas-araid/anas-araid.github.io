@@ -85,7 +85,7 @@ const action = (
     //   keywords: 'sourcecode',
     //   section: "Stay in touch",
     //   icon: <GithubIcon size={19} />,
-    //   perform: () => window.open('https://github.com/asdf1899', '_blank'),
+    //   perform: () => window.open('https://github.com/anas-araid', '_blank'),
     // },
     {
       id: 'theme',
