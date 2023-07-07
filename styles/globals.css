@@ -10,7 +10,6 @@
 }
 @import url('https://rsms.me/inter/inter.css');
 * {
-  /* font-family: 'ITC Avant Garde Gothic Std Book', sans-serif; */
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, 'Roboto', 'Helvetica Neue', sans-serif;
 }
 
@@ -25,23 +24,7 @@ body {
 }
 
 .shiny-list {
-  list-style-type: "✦  ";
-}
-
-.underline--magical {
-  background-repeat: no-repeat;
-  background-size: 100% 0.2em;
-  background-position: 0 88%;
-  transition: background-size 0.25s ease-in;
-}
-.underline--light {
-  background-image: linear-gradient(120deg, #1bffcd 0%, #8fd3f4 100%);
-}
-.underline--dark {
-  background-image: linear-gradient(to right, rgb(236, 72, 153), rgb(239, 68, 68));
-}
-.underline--magical:hover {
-  background-size: 100% 80%;
+  list-style-type: '✦  ';
 }
 
 .gradient-text-light {
@@ -59,108 +42,41 @@ body {
 }
 
 .home-title-dark {
-  background-image: radial-gradient(65% 100% at 50% 50%,#fff 40%,hsla(0,0%,100%,.4) 100%);
+  background-image: radial-gradient(65% 100% at 50% 50%, #fff 40%, hsla(0, 0%, 100%, 0.4) 100%);
   width: max-content;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  /* background-image: linear-gradient(to right, rgb(255, 255, 255), rgba(0, 0, 0, 0.2)); */
 }
 
 .home-title-light {
-  background-image: linear-gradient(to right, rgba(0, 0, 0), rgba(255, 255, 255, 0.1) );
-  /* width: max-content; */
+  background-image: linear-gradient(to right, rgba(0, 0, 0), rgba(255, 255, 255, 0.1));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-
 @keyframes clipFade {
-  0%, 10% {
+  0%,
+  10% {
     -webkit-mask-position: 400px;
     mask-position: 400px;
   }
-  90%, 100% {
+  90%,
+  100% {
     -webkit-mask-position: 0px;
     mask-position: 0px;
   }
 }
 
 .animated-belka-logo {
-  -webkit-mask-image: linear-gradient(
-    60deg,
-    black 25%,
-    rgba(0, 0, 0, 0.2) 50%,
-    black 75%
-  );
-  mask-image: linear-gradient(
-    60deg,
-    black 25%,
-    rgba(0, 0, 0, 0.2) 50%,
-    black 75%
-  );
+  -webkit-mask-image: linear-gradient(60deg, black 25%, rgba(0, 0, 0, 0.2) 50%, black 75%);
+  mask-image: linear-gradient(60deg, black 25%, rgba(0, 0, 0, 0.2) 50%, black 75%);
   mask-size: 400px;
   -webkit-mask-size: 400px;
   animation-name: clipFade;
   animation-duration: 3s;
   animation-timing-function: ease;
-}
-
-.rainbow-gradient-bg {
-  background-image: linear-gradient(
-    90deg,
-    rgba(255, 0, 0, 1) 0%,
-    rgba(255, 154, 0, 1) 10%,
-    rgba(208, 222, 33, 1) 20%,
-    rgba(79, 220, 74, 1) 30%,
-    rgba(63, 218, 216, 1) 40%,
-    rgba(47, 201, 226, 1) 50%,
-    rgba(28, 127, 238, 1) 60%,
-    rgba(95, 21, 242, 1) 70%,
-    rgba(186, 12, 248, 1) 80%,
-    rgba(251, 7, 217, 1) 90%,
-    rgba(255, 0, 0, 1) 100%
-  );
-}
-
-.doge {
-  opacity: 0;
-  animation: 3s linear doge-animation;
-}
-
-@keyframes doge-animation {
-  0% {
-    transform: rotate(0deg) scale(0);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-    transform: rotate(360deg) scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: rotate(0deg) scale(0);
-  }
-}
-
-.nyan {
-  opacity: 0;
-  animation: 3s linear nyan-animation;
-}
-
-@keyframes nyan-animation {
-  0% {
-    opacity: 0;
-    transform: translate(0, 0);
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: translate(80%, 0);
-  }
 }
 
 /* CMD button animation */
@@ -251,146 +167,4 @@ body {
 .child-wrapper {
   position: relative;
   z-index: 1;
-}
-
-/* font */
-
-@font-face {
-  font-family: 'ITC Avant Garde Gothic Std Extra Light';
-  font-style: normal;
-  font-weight: normal;
-  src: local('ITC Avant Garde Gothic Std Extra Light'), url('/fonts/ITCAvantGarde/ITCAvantGardeStdXLt.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'ITC Avant Garde Gothic Std Extra Light Condensed';
-  font-style: normal;
-  font-weight: normal;
-  src: local('ITC Avant Garde Gothic Std Extra Light Condensed'), url('/fonts/ITCAvantGarde/ITCAvantGardeStdXLtCn.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'ITC Avant Garde Gothic Std Extra Light Condensed Oblique';
-  font-style: normal;
-  font-weight: normal;
-  src: local('ITC Avant Garde Gothic Std Extra Light Condensed Oblique'), url('/fonts/ITCAvantGarde/ITCAvantGardeStdXLtCnObl.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'ITC Avant Garde Gothic Std Extra Light Oblique';
-  font-style: normal;
-  font-weight: normal;
-  src: local('ITC Avant Garde Gothic Std Extra Light Oblique'), url('/fonts/ITCAvantGarde/ITCAvantGardeStdXLtObl.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'ITC Avant Garde Gothic Std Book';
-  font-style: normal;
-  font-weight: normal;
-  src: local('ITC Avant Garde Gothic Std Book'), url('/fonts/ITCAvantGarde/ITCAvantGardeStdBk.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'ITC Avant Garde Gothic Std Book Condensed';
-  font-style: normal;
-  font-weight: normal;
-  src: local('ITC Avant Garde Gothic Std Book Condensed'), url('/fonts/ITCAvantGarde/ITCAvantGardeStdBkCn.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'ITC Avant Garde Gothic Std Book Condensed Oblique';
-  font-style: normal;
-  font-weight: normal;
-  src: local('ITC Avant Garde Gothic Std Book Condensed Oblique'), url('/fonts/ITCAvantGarde/ITCAvantGardeStdBkCnObl.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'ITC Avant Garde Gothic Std Book Oblique';
-  font-style: normal;
-  font-weight: normal;
-  src: local('ITC Avant Garde Gothic Std Book Oblique'), url('/fonts/ITCAvantGarde/ITCAvantGardeStdBkObl.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'ITC Avant Garde Gothic Std Medium';
-  font-style: normal;
-  font-weight: normal;
-  src: local('ITC Avant Garde Gothic Std Medium'), url('/fonts/ITCAvantGarde/ITCAvantGardeStdMd.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'ITC Avant Garde Gothic Std Medium Condensed';
-  font-style: normal;
-  font-weight: normal;
-  src: local('ITC Avant Garde Gothic Std Medium Condensed'), url('/fonts/ITCAvantGarde/ITCAvantGardeStdMdCn.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'ITC Avant Garde Gothic Std Medium Condensed Oblique';
-  font-style: normal;
-  font-weight: normal;
-  src: local('ITC Avant Garde Gothic Std Medium Condensed Oblique'), url('/fonts/ITCAvantGarde/ITCAvantGardeStdMdCnObl.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'ITC Avant Garde Gothic Std Medium Oblique';
-  font-style: normal;
-  font-weight: normal;
-  src: local('ITC Avant Garde Gothic Std Medium Oblique'), url('/fonts/ITCAvantGarde/ITCAvantGardeStdMdObl.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'ITC Avant Garde Gothic Std Demi';
-  font-style: normal;
-  font-weight: normal;
-  src: local('ITC Avant Garde Gothic Std Demi'), url('/fonts/ITCAvantGarde/ITCAvantGardeStdDemi.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'ITC Avant Garde Gothic Std Demi Condensed';
-  font-style: normal;
-  font-weight: normal;
-  src: local('ITC Avant Garde Gothic Std Demi Condensed'), url('/fonts/ITCAvantGarde/ITCAvantGardeStdDemiCn.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'ITC Avant Garde Gothic Std Demi Condensed Oblique';
-  font-style: normal;
-  font-weight: normal;
-  src: local('ITC Avant Garde Gothic Std Demi Condensed Oblique'), url('/fonts/ITCAvantGarde/ITCAvantGardeStdDemiCnObl.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'ITC Avant Garde Gothic Std Demi Oblique';
-  font-style: normal;
-  font-weight: normal;
-  src: local('ITC Avant Garde Gothic Std Demi Oblique'), url('/fonts/ITCAvantGarde/ITCAvantGardeStdDemiObl.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'ITC Avant Garde Gothic Std Bold';
-  font-style: normal;
-  font-weight: normal;
-  src: local('ITC Avant Garde Gothic Std Bold'), url('/fonts/ITCAvantGarde/ITCAvantGardeStdBold.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'ITC Avant Garde Gothic Std Bold Condensed';
-  font-style: normal;
-  font-weight: normal;
-  src: local('ITC Avant Garde Gothic Std Bold Condensed'), url('/fonts/ITCAvantGarde/ITCAvantGardeStdBoldCn.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'ITC Avant Garde Gothic Std Bold Condensed Oblique';
-  font-style: normal;
-  font-weight: normal;
-  src: local('ITC Avant Garde Gothic Std Bold Condensed Oblique'), url('/fonts/ITCAvantGarde/ITCAvantGardeStdBoldCnObl.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'ITC Avant Garde Gothic Std Bold Oblique';
-  font-style: normal;
-  font-weight: normal;
-  src: local('ITC Avant Garde Gothic Std Bold Oblique'), url('/fonts/ITCAvantGarde/ITCAvantGardeStdBoldObl.woff') format('woff');
 }
