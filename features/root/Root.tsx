@@ -38,7 +38,7 @@ const Root = ({ Component, pageProps, router }: AppProps): JSX.Element => {
         isAboutPageActive: true,
         isPostPageActive: false,
         isResumePageActive: false,
-        isLinkPageActive: false,
+        isLinkPageActive: true,
         isLoading: false,
       }
     ));
