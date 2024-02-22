@@ -19,7 +19,7 @@ const Root = ({ Component, pageProps, router }: AppProps): JSX.Element => {
   }, [theme]);
 
   useEffect(() => {
-    (async () => {
+    /*(async () => {
       const records = await getActivePages();
       const pages = getMinifiedRecords<TSettingsFieldSet>(records).map((record) => record.fields);
 
@@ -32,7 +32,14 @@ const Root = ({ Component, pageProps, router }: AppProps): JSX.Element => {
           isLoading: false,
         })
       );
-    })();
+    })();*/
+    dispatch(setActivePages(
+      isAboutPageActive: true,
+      isPostPageActive: false,
+      isResumePageActive: false,
+      isLinkPageActive: false,
+      isLoading: false,
+    ));
   }, []);
 
   return (
