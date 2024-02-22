@@ -1,12 +1,12 @@
 import { KBarProvider } from 'kbar';
 import { AppProps } from 'next/app';
 import React, { useEffect } from 'react';
-import { getActivePages } from '../../api/featureFlag';
+// import { getActivePages } from '../../api/featureFlag';
 import { KBarContent } from '../../components/kbar/KBarContent';
 import { useAppDispatch } from '../../hooks/useAppDispatch';
 import { useThemeContext } from '../../hooks/useThemeContext';
-import { EPAGE, TSettingsFieldSet } from '../../types/airtable';
-import { getMinifiedRecords } from '../../utils/airtable';
+// import { EPAGE, TSettingsFieldSet } from '../../types/airtable';
+// import { getMinifiedRecords } from '../../utils/airtable';
 import { setActivePages } from '../featureFlag/featureFlagsSlice';
 import { Layout } from '../layout';
 
