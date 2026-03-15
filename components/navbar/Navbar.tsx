@@ -4,9 +4,7 @@ import { useRouter } from 'next/router';
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import { isMobile } from 'react-device-detect';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
-import { useAppSelector } from '../../hooks/useAppSelector';
 import { useThemeContext } from '../../hooks/useThemeContext';
-import { RootState } from '../../store';
 import { concatClassNames } from '../../utils/tailwind';
 import { KBarButton } from '../kbar/KBarButton';
 
@@ -14,9 +12,6 @@ const Navbar: FunctionComponent = (): JSX.Element => {
   const router = useRouter();
   const { query } = useKBar();
   const { isDark, setDarkMode, theme } = useThemeContext();
-
-  const isAboutPageActive = useAppSelector((state: RootState) => state.featureFlags.isAboutPageActive);
-  const isPostPageActive = useAppSelector((state: RootState) => state.featureFlags.isPostPageActive);
 
   // BAD CODE - preventing navbar bg from flickering
   const [background, setBackground] = useState('transparent');
@@ -39,21 +34,12 @@ const Navbar: FunctionComponent = (): JSX.Element => {
       <div className='flex w-1/2 justify-end m-auto'>
         {!isMobile && (
           <span>
-            {isAboutPageActive || isPostPageActive ? (
-              <Link href='/' className={concatClassNames('mr-6', router.pathname === '/' ? 'opacity-60' : '')}>
-                Home
-              </Link>
-            ) : null}
-            {isAboutPageActive && (
-              <Link href='/about' className={concatClassNames('mr-6', router.pathname === '/about' ? 'opacity-60' : '')}>
-                About
-              </Link>
-            )}
-            {isPostPageActive && (
-              <Link href='/posts' className={concatClassNames('mr-6', router.pathname === '/post' ? 'opacity-50' : '')}>
-                Posts
-              </Link>
-            )}
+            <Link href='/' className={concatClassNames('mr-6', router.pathname === '/' ? 'opacity-60' : '')}>
+              Home
+            </Link>
+            <Link href='/about' className={concatClassNames('mr-6', router.pathname === '/about' ? 'opacity-60' : '')}>
+              About
+            </Link>
           </span>
         )}
         <div onClick={() => setDarkMode(!isDark)}>

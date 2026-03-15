@@ -19,7 +19,6 @@ const Contacts: FunctionComponent = () => {
   const { isDark } = useThemeContext();
   const openLink = useTrackLink();
 
-  // TODO: store links in airtable
   const links: ILink[] = [
     {
       text: 'Github',

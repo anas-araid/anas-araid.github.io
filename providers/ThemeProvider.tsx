@@ -1,4 +1,4 @@
-import { createContext, FunctionComponent } from 'react';
+import { createContext, FunctionComponent, ReactNode } from 'react';
 import { useDarkMode } from '../hooks/useDarkMode';
 import { IThemeContext } from '../types/theme';
 
@@ -25,7 +25,7 @@ const THEMES = {
 
 export const ThemeContext = createContext<IThemeContext>({} as IThemeContext);
 
-const ThemeProvider: FunctionComponent = ({ children }) => {
+const ThemeProvider: FunctionComponent<{ children: ReactNode }> = ({ children }) => {
   const [isDark, setDarkMode] = useDarkMode();
 
   const theme = isDark ? THEMES.dark : THEMES.light;
