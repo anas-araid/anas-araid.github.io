@@ -7,7 +7,7 @@ export function useDarkMode(): readonly [boolean, (value: boolean) => void] {
     if (localStorage.getItem('isDark')) {
       setDark(localStorage.getItem('isDark') === 'true');
     }
-  }, [isDark]);
+  }, []);
 
   const setDarkMode = (value: boolean) => {
     localStorage.setItem('isDark', JSON.stringify(value));

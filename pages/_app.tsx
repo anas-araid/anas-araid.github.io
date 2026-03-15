@@ -1,10 +1,8 @@
 import type { AppProps } from 'next/app';
 import React, { useEffect } from 'react';
-import { Provider } from 'react-redux';
 import { Root } from '../features/root';
 import * as ga from '../lib/analytics';
 import { ThemeProvider } from '../providers';
-import { store } from '../store';
 import '../styles/globals.css';
 import Head from 'next/head'
 
@@ -50,8 +48,6 @@ const App = ({ Component, pageProps, router }: AppProps): JSX.Element => {
         <meta property='twitter:title' content='Anas Araid' />
         <meta property='twitter:description' content='Mostly a developer, occasionally a firefighter, definitely not a designer.' />
 
-        {/* <link href='https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap' rel='stylesheet' /> */}
-
         <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} />
         <script
           dangerouslySetInnerHTML={{
@@ -66,11 +62,9 @@ const App = ({ Component, pageProps, router }: AppProps): JSX.Element => {
           }}
         />
       </Head>
-      <Provider store={store}>
-        <ThemeProvider>
-          <Root pageProps={pageProps} Component={Component} router={router} />
-        </ThemeProvider>
-      </Provider>    
+      <ThemeProvider>
+        <Root pageProps={pageProps} Component={Component} router={router} />
+      </ThemeProvider>
     </>
   );
 };
