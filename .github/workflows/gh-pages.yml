@@ -10,25 +10,24 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2.3.1
-      - name: Use Node.js 16.x
-        uses: actions/setup-node@v1
+        uses: actions/checkout@v4
+
+      - name: Use Node.js from .nvmrc
+        uses: actions/setup-node@v4
         with:
-          node-version: '16.x'
+          node-version-file: '.nvmrc'
 
       - name: Installing packages
         run: yarn install --frozen-lockfile
 
       - name: Build
-        run: yarn run build && yarn run export && touch ./out/.nojekyll
+        run: yarn build && touch ./out/.nojekyll
         env:
           NEXT_PUBLIC_GOOGLE_ANALYTICS: ${{ secrets.NEXT_PUBLIC_GOOGLE_ANALYTICS }}
-          NEXT_PUBLIC_AIRTABLE_API_KEY: ${{ secrets.NEXT_PUBLIC_AIRTABLE_API_KEY }}
-          NEXT_PUBLIC_AIRTABLE_BASE_ID: ${{ secrets.NEXT_PUBLIC_AIRTABLE_BASE_ID }}
 
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.0
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: out
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: out
