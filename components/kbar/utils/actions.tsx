@@ -1,72 +1,68 @@
-import { Action } from 'kbar';
 import { NextRouter } from 'next/router';
-import { Home as HomeIcon } from '@styled-icons/feather/Home'
-import { Link as LinkIcon } from '@styled-icons/feather/Link'
-import { DarkTheme as DarkThemeIcon } from '@styled-icons/fluentui-system-regular/DarkTheme'
-import { Info as InfoIcon } from '@styled-icons/fluentui-system-regular/Info'
-import { Sun as SunIcon } from '@styled-icons/feather/Sun'
-import { Moon as MoonIcon } from '@styled-icons/feather/Moon'
+import { ReactNode } from 'react';
+import { Home as HomeIcon } from '@styled-icons/feather/Home';
+import { Link as LinkIcon } from '@styled-icons/feather/Link';
+import { Sun as SunIcon } from '@styled-icons/feather/Sun';
+import { Moon as MoonIcon } from '@styled-icons/feather/Moon';
+import { Info as InfoIcon } from '@styled-icons/fluentui-system-regular/Info';
 
-const action = (
-  handleActionTheme: (value: boolean) => void,
+export interface ICmdkAction {
+  id: string;
+  name: string;
+  keywords?: string;
+  shortcut?: string[];
+  icon?: ReactNode;
+  section: string;
+  perform: () => void;
+}
+
+const getActions = (
+  setDarkMode: (value: boolean) => void,
   router: NextRouter,
-): Action[] => [
+): ICmdkAction[] => [
   {
-    id: 'homeAction',
+    id: 'home',
     name: 'Home',
-    shortcut: ['h'],
+    shortcut: ['H'],
     keywords: 'back',
-    section: "Navigation",
+    section: 'Navigation',
     icon: <HomeIcon size={19} />,
     perform: () => router.push('/'),
   },
   {
-    id: 'aboutAction',
+    id: 'about',
     name: 'About',
-    shortcut: ['a'],
+    shortcut: ['A'],
     keywords: 'about bio meme',
-    section: "Navigation",
+    section: 'Navigation',
     icon: <InfoIcon size={19} />,
     perform: () => router.push('/about'),
   },
   {
-    id: 'linksAction',
+    id: 'links',
     name: 'Links',
-    shortcut: ['l', 'k'],
+    shortcut: ['L'],
     keywords: 'link contact github linkedin twitter',
-    section: "Stay in touch",
+    section: 'Navigation',
     icon: <LinkIcon size={19} />,
     perform: () => router.push('/links'),
   },
   {
-    id: 'theme',
-    name: 'Change theme…',
-    shortcut: [],
-    keywords: 'interface color dark light theme',
-    section: 'Theme',
-    icon: <DarkThemeIcon size={19} />,
-    children: ['darkTheme', 'lightTheme'],
-  },
-  {
-    id: 'darkTheme',
+    id: 'dark',
     name: 'Dark',
-    shortcut: [],
-    keywords: 'dark',
-    section: '',
-    perform: () => handleActionTheme(true),
-    parent: 'theme',
+    keywords: 'dark theme',
+    section: 'Theme',
     icon: <MoonIcon size={19} />,
+    perform: () => setDarkMode(true),
   },
   {
-    id: 'lightTheme',
+    id: 'light',
     name: 'Light',
-    shortcut: [],
-    keywords: 'light',
-    section: '',
-    perform: () => handleActionTheme(false),
-    parent: 'theme',
+    keywords: 'light theme',
+    section: 'Theme',
     icon: <SunIcon size={19} />,
+    perform: () => setDarkMode(false),
   },
 ];
 
-export default action;
+export default getActions;

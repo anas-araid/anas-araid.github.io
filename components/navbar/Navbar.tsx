@@ -1,26 +1,22 @@
-import { useKBar, VisualState } from 'kbar';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FunctionComponent } from 'react';
 import { isMobile } from 'react-device-detect';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
+import { useCmdk } from '../../contexts/cmdk-context';
 import { useThemeContext } from '../../hooks/useThemeContext';
 import { concatClassNames } from '../../utils/tailwind';
-import { KBarButton } from '../kbar/KBarButton';
+import { KBarButton } from '../kbar/kbar-button';
 
 const Navbar: FunctionComponent = (): JSX.Element => {
   const router = useRouter();
-  const { query } = useKBar();
+  const { setOpen } = useCmdk();
   const { isDark, setDarkMode, theme } = useThemeContext();
 
   return (
     <div className={concatClassNames(theme.backgroundColor, 'rounded-b-md transition-all duration-300 sticky top-0 flex pt-10 pb-10 md:pt-20 w-full z-10')}>
       <div className='flex w-1/2 justify-start'>
-        <div
-          onClick={() =>
-            query.setVisualState((vs) => ([VisualState.animatingOut, VisualState.hidden].includes(vs) ? VisualState.animatingIn : VisualState.animatingOut))
-          }
-        >
+        <div onClick={() => setOpen((o) => !o)}>
           <KBarButton isDarkMode={isDark} />
         </div>
       </div>

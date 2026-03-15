@@ -1,14 +1,12 @@
-import { useKBar, VisualState } from 'kbar';
 import { AppProps } from 'next/app';
 import { Navbar } from '../../components/navbar';
 import { ScreenSaver } from '../../components/screensaver';
+import { useCmdk } from '../../contexts/cmdk-context';
 import { useWindowInactivity } from '../../hooks/useWindowInactivity';
 import { concatClassNames } from '../../utils/tailwind';
 
 const Layout = ({ pageProps, Component }: AppProps): JSX.Element => {
-  const { visible } = useKBar((state) => ({
-    visible: state.visualState !== VisualState.hidden,
-  }));
+  const { open: visible } = useCmdk();
 
   const inactive = useWindowInactivity();
 

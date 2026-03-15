@@ -1,10 +1,11 @@
-import { FunctionComponent, Key, useState } from 'react';
+import { FunctionComponent, Key, ReactNode, useState } from 'react';
 import { range, generateSparkle, usePrefersReducedMotion, useRandomInterval } from './utils';
 
 const DEFAULT_COLOR = '#FFC700';
 
 interface ISparklesProps {
   color?: string;
+  children?: ReactNode;
 }
 
 const Sparkles: FunctionComponent<ISparklesProps> = ({ color = DEFAULT_COLOR, children, ...delegated }): JSX.Element => {

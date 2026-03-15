@@ -7,8 +7,8 @@ const THEMES = {
     backgroundColor: 'bg-black',
     textColor: 'text-white',
     gradientText: 'gradient-text-light',
-    kbarBackground: 'rgb(28 28 29)',
-    kbarColor: 'rgb(252 252 252)',
+    kbarBackground: 'bg-[#1c1c1d]',
+    kbarColor: 'text-white',
     homeTitle: 'home-title-dark',
     belkaLogo: 'white'
   },
@@ -16,8 +16,8 @@ const THEMES = {
     backgroundColor: 'bg-white',
     textColor: 'text-black',
     gradientText: 'gradient-text-dark',
-    kbarBackground: 'rgb(252 252 252)',
-    kbarColor: 'rgb(28 28 29)',
+    kbarBackground: 'bg-[#fcfcfc]',
+    kbarColor: 'text-zinc-900',
     homeTitle: 'home-title-light',
     belkaLogo: 'black'
   },
