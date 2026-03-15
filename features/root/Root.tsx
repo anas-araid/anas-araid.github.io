@@ -1,6 +1,6 @@
 import { KBarProvider } from 'kbar';
 import { AppProps } from 'next/app';
-import React, { useEffect } from 'react';
+import { useLayoutEffect } from 'react';
 import { KBarContent } from '../../components/kbar/KBarContent';
 import { useThemeContext } from '../../hooks/useThemeContext';
 import { Layout } from '../layout';
@@ -8,7 +8,7 @@ import { Layout } from '../layout';
 const Root = ({ Component, pageProps, router }: AppProps): JSX.Element => {
   const { theme } = useThemeContext();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     document.body.className = `transition-all h-screen duration-300 ${theme.backgroundColor} ${theme.textColor}`;
   }, [theme]);
 

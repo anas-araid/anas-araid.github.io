@@ -1,7 +1,7 @@
 import { useKBar, VisualState } from 'kbar';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { FunctionComponent, useEffect, useState } from 'react';
+import { FunctionComponent } from 'react';
 import { isMobile } from 'react-device-detect';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
 import { useThemeContext } from '../../hooks/useThemeContext';
@@ -13,15 +13,8 @@ const Navbar: FunctionComponent = (): JSX.Element => {
   const { query } = useKBar();
   const { isDark, setDarkMode, theme } = useThemeContext();
 
-  // BAD CODE - preventing navbar bg from flickering
-  const [background, setBackground] = useState('transparent');
-
-  useEffect(() => {
-    setBackground(theme.backgroundColor);
-  }, [isDark]);
-
   return (
-    <div className={concatClassNames(background, 'bg-opacity-90 rounded-b-md transition-all duration-300 sticky top-0 flex pt-10 pb-10 md:pt-20 w-full z-10')}>
+    <div className={concatClassNames(theme.backgroundColor, 'rounded-b-md transition-all duration-300 sticky top-0 flex pt-10 pb-10 md:pt-20 w-full z-10')}>
       <div className='flex w-1/2 justify-start'>
         <div
           onClick={() =>
