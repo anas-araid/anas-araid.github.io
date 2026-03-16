@@ -27,7 +27,7 @@ const Home: FunctionComponent = () => {
       <h1 className={concatClassNames('text-4xl font-normal', theme.homeTitle)}>Anas Araid</h1>
       <div className='flex flex-row items-center h-auto mt-12'>
         <h3 className='text-xl font-normal items-center'>
-          Designing and building interfaces — currently at
+          Building interfaces — currently at
           <svg
             id='belka-logo'
             className='inline ml-0.5 mt-0.5 mb-1 animated-belka-logo cursor-pointer'
