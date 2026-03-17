@@ -44,6 +44,9 @@ const Navbar: FunctionComponent = (): JSX.Element => {
                 <Link href='/lab' className={router.pathname === '/lab' ? 'opacity-60' : ''}>
                   Lab
                 </Link>
+                <Link href='/cv' className={router.pathname === '/cv' ? 'opacity-60' : ''}>
+                  CV
+                </Link>
               </span>
             )}
             <div onClick={() => setDarkMode(!isDark)}>
