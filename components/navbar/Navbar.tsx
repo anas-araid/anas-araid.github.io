@@ -22,12 +22,15 @@ const Navbar: FunctionComponent = (): JSX.Element => {
       </div>
       <div className='flex w-1/2 justify-end m-auto'>
         {!isMobile && (
-          <span>
-            <Link href='/' className={concatClassNames('mr-6', router.pathname === '/' ? 'opacity-60' : '')}>
+          <span className='flex items-center gap-6 mr-6'>
+            <Link href='/' className={router.pathname === '/' ? 'opacity-60' : ''}>
               Home
             </Link>
-            <Link href='/about' className={concatClassNames('mr-6', router.pathname === '/about' ? 'opacity-60' : '')}>
+            <Link href='/about' className={router.pathname === '/about' ? 'opacity-60' : ''}>
               About
+            </Link>
+            <Link href='/lab' className={router.pathname === '/lab' ? 'opacity-60' : ''}>
+              Lab
             </Link>
           </span>
         )}

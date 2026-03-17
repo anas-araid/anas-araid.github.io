@@ -29,7 +29,7 @@ const App = ({ Component, pageProps, router }: AppProps): JSX.Element => {
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
         <meta name='theme-color' content='#000000' />
         <meta name='title' content='Anas Araid' />
-        <meta name='description' content='Mostly a developer, occasionally a firefighter, definitely not a designer.' />
+        <meta name='description' content='building interfaces.' />
         <meta name='author' content='Anas Araid' />
         <meta name='keywords' content='portfolio, anas, araid' />
 
@@ -38,7 +38,7 @@ const App = ({ Component, pageProps, router }: AppProps): JSX.Element => {
         <meta property='og:type' content='website' />
         <meta property='og:url' content='https://anasaraid.me/' />
         <meta property='og:title' content='Anas Araid' />
-        <meta property='og:description' content='Mostly a developer, occasionally a firefighter, definitely not a designer.' />
+        <meta property='og:description' content='building interfaces.' />
         <meta property="og:image" content="https://anasaraid.me/og.png"/>
         <meta property="og:image:width" content="1200"/>
         <meta property="og:image:height" content="630"/>
@@ -46,7 +46,7 @@ const App = ({ Component, pageProps, router }: AppProps): JSX.Element => {
         <meta property='twitter:card' content='summary_large_image' />
         <meta property='twitter:url' content='https://anasaraid.me/' />
         <meta property='twitter:title' content='Anas Araid' />
-        <meta property='twitter:description' content='Mostly a developer, occasionally a firefighter, definitely not a designer.' />
+        <meta property='twitter:description' content='building interfaces.' />
 
         <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} />
         <script

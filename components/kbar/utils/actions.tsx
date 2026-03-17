@@ -5,6 +5,7 @@ import { Link as LinkIcon } from '@styled-icons/feather/Link';
 import { Sun as SunIcon } from '@styled-icons/feather/Sun';
 import { Moon as MoonIcon } from '@styled-icons/feather/Moon';
 import { Info as InfoIcon } from '@styled-icons/fluentui-system-regular/Info';
+import { Zap as ZapIcon } from '@styled-icons/feather/Zap';
 
 export interface ICmdkAction {
   id: string;
@@ -37,6 +38,14 @@ const getActions = (
     section: 'Navigation',
     icon: <InfoIcon size={19} />,
     perform: () => router.push('/about'),
+  },
+  {
+    id: 'lab',
+    name: 'Lab',
+    keywords: 'lab prototypes videos twitter ui',
+    section: 'Navigation',
+    icon: <ZapIcon size={19} />,
+    perform: () => router.push('/lab'),
   },
   {
     id: 'links',

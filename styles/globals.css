@@ -17,6 +17,11 @@ body {
   transition: all 0.25s linear;
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
 ::selection {
   background: #1bffcd;
   color: #000;
