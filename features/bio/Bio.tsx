@@ -8,16 +8,16 @@ const Bio = (): JSX.Element => {
   return (
     <div className='mt-20'>
       <h2 className='text-2xl mt-8 font-medium'>Oh, hello.</h2>
-      <p className='text-base mt-8 font-font-normal'>Well, I'm a non-award winning UI engineer, HCI graduate and maker of dad jokes without being a dad. Lately I'm interested in design systems, motion design and the feel of things.</p>
-      <p className='text-base mt-2 font-normal'>The kind of work you only notice when it's missing.</p>
-      <p className='text-base mt-2 font-normal'>Over the years I've worked with Segugio.it, Spiagge.it, NeN, Banca Sella, Fatture in Cloud, Soundtrap and a few others.</p>
-      <h2 className='text-2xl mt-8 font-medium'>What else?</h2>
-      <p className='text-base mt-4 font-normal'>I was born and raised in Trento, a small city in the heart of the Italian Alps.</p>
-      <p className='text-base mt-2 font-normal'>
+      <p className='text-base mt-8 font-normal leading-relaxed'>Well, I'm a non-award winning UI engineer, HCI graduate and maker of dad jokes without being a dad. Lately I'm interested in design systems, motion design and the feel of things.</p>
+      <p className='text-base mt-4 font-normal leading-relaxed text-zinc-400'>The kind of work you only notice when it's missing.</p>
+      <p className='text-base mt-4 font-normal leading-relaxed'>Over the years I've worked with Segugio.it, Spiagge.it, NeN, Banca Sella, Fatture in Cloud, Soundtrap and a few others.</p>
+      <h2 className='text-2xl mt-12 font-medium'>What else?</h2>
+      <p className='text-base mt-6 font-normal leading-relaxed'>I was born and raised in Trento, in the Italian Alps.</p>
+      <p className='text-base mt-4 font-normal leading-relaxed'>
         Outside of work I train as an endurance athlete and volunteer as a firefighter. Nobody said hobbies had to be relaxing.
       </p>
-      <h2 className='text-2xl mt-8 font-medium '>And that's it.</h2>
-      <p className='text-base mt-4 mb-32 font-normal'>
+      <h2 className='text-2xl mt-12 font-medium'>And that's it.</h2>
+      <p className='text-base mt-6 mb-32 font-normal leading-relaxed'>
         The best way to contact me is on{' '}
         <a onClick={() => openLink(TWITTER_URL)} className='cursor-pointer font-medium'>
           <b className={concatClassNames('font-medium pt-1')}>
