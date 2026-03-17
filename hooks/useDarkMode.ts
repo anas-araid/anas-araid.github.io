@@ -4,9 +4,8 @@ export function useDarkMode(): readonly [boolean, (value: boolean) => void] {
   const [isDark, setDark] = useState<boolean>(true);
 
   useEffect(() => {
-    if (localStorage.getItem('isDark')) {
-      setDark(localStorage.getItem('isDark') === 'true');
-    }
+    const stored = localStorage.getItem('isDark');
+    setDark(stored === null ? true : stored === 'true');
   }, []);
 
   const setDarkMode = (value: boolean) => {

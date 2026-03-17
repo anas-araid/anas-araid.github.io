@@ -10,16 +10,6 @@ interface VideoCardProps extends TweetData {
 const VideoCard = ({ thumbnail, videoUrl, url, id, hoveredId, onMouseEnter, onMouseLeave }: VideoCardProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  useEffect(() => {
-    const v = videoRef.current;
-    if (!v) return;
-    if (hoveredId === null || hoveredId === id) {
-      v.play();
-    } else {
-      v.pause();
-    }
-  }, [hoveredId, id]);
-
   const isDimmed = hoveredId !== null && hoveredId !== id;
 
   return (
@@ -27,7 +17,7 @@ const VideoCard = ({ thumbnail, videoUrl, url, id, hoveredId, onMouseEnter, onMo
       href={url}
       target='_blank'
       rel='noopener noreferrer'
-      className={`block overflow-hidden rounded-xl cursor-pointer transition-all duration-300 ${isDimmed ? 'opacity-20' : 'opacity-100'} ${hoveredId === id ? 'scale-[1.02] z-50' : 'scale-100'}`}
+      className={`block overflow-hidden rounded-xl cursor-pointer transition-all duration-300 ${isDimmed ? 'opacity-20' : 'opacity-100'} ${hoveredId === id ? 'scale-[1.02] z-10' : 'scale-100'}`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
@@ -64,9 +54,9 @@ const Lab = (): JSX.Element => {
 
   return (
     <div className='mt-20 mb-32'>
-      <h1 className='text-2xl font-medium'>UI Prototypes</h1>
+      <h1 className='text-2xl font-medium'>Experiments</h1>
       <p className='text-base mt-4 font-normal max-w-xl'>
-        Implementing interfaces and interactions that makes human beings feel something.
+        Implementing interfaces and interactions that make humans feel something.
       </p>
       <div className='mt-12 hidden sm:grid grid-cols-2 gap-3 items-start'>
         <div className='flex flex-col gap-3'>{left.map(renderCard)}</div>

@@ -15,10 +15,12 @@ const Layout = ({ pageProps, Component }: AppProps): JSX.Element => {
   }
 
   return (
-    <div className={concatClassNames('flex justify-center px-5 transition-all', visible ? 'opacity-25' : '')}>
-      <div className='max-w-2xl w-full'>
-        <Navbar />
-        <Component {...pageProps} />
+    <div className={concatClassNames('transition-all', visible ? 'opacity-25' : '')}>
+      <Navbar />
+      <div className='flex justify-center px-5'>
+        <div className='max-w-2xl w-full'>
+          <Component {...pageProps} />
+        </div>
       </div>
     </div>
   );
