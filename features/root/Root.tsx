@@ -32,6 +32,7 @@ const Root = ({ Component, pageProps, router }: AppProps): JSX.Element => {
       switch (e.key.toLowerCase()) {
         case 'h': router.push('/'); break;
         case 'a': router.push('/about'); break;
+        case 'c': router.push('/cv'); break;
         case 'l': router.push('/links'); break;
       }
     };
