@@ -56,7 +56,7 @@ const Lab = (): JSX.Element => {
     <div className='mt-20 mb-32'>
       <h1 className='text-2xl font-medium'>Experiments</h1>
       <p className='text-base mt-4 font-normal max-w-xl'>
-        Implementing interfaces and interactions that make humans feel something.
+        Mostly pixels, sometimes joy. Made with more care than necessary.
       </p>
       <div className='mt-12 hidden sm:grid grid-cols-2 gap-3 items-start'>
         <div className='flex flex-col gap-3'>{left.map(renderCard)}</div>
