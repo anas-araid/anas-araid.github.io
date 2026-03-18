@@ -54,7 +54,7 @@ const Lab = (): JSX.Element => {
 
   return (
     <div className='mt-20 mb-32'>
-      <h1 className='text-2xl font-medium'>Experiments</h1>
+      <h1 className='text-2xl font-medium'>Painting the internet</h1>
       <p className='text-base mt-4 font-normal max-w-xl'>
         Mostly pixels, sometimes joy. Made with more care than necessary.
       </p>

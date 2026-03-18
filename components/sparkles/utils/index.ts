@@ -71,7 +71,7 @@ export const generateSparkle = (color: string): IGenerateSparkle => {
     id: String(random(10000, 99999)),
     createdAt: Date.now(),
     color,
-    size: random(10, 20),
+    size: random(8, 14),
     style: {
       top: random(0, 100) + '%',
       left: random(0, 100) + '%',

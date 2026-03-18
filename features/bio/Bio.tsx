@@ -1,6 +1,7 @@
 import { TWITTER_URL } from '../../constants';
 import { useTrackLink } from '../../hooks/useTrackLink';
 import { concatClassNames } from '../../utils/tailwind';
+import Sparkles from '../../components/sparkles/Sparkles';
 
 const Bio = (): JSX.Element => {
   const openLink = useTrackLink();
@@ -8,9 +9,16 @@ const Bio = (): JSX.Element => {
   return (
     <div className='mt-20'>
       <h2 className='text-2xl mt-8 font-medium'>Oh, hello.</h2>
-      <p className='text-base mt-8 font-normal leading-relaxed'>Well, I'm a non-award winning UI engineer, HCI graduate and maker of dad jokes without being a dad. Lately I'm interested in design systems, motion design and the feel of things.</p>
-      <p className='text-base mt-4 font-normal leading-relaxed text-zinc-400'>The kind of work you only notice when it's missing.</p>
-      <p className='text-base mt-4 font-normal leading-relaxed'>Over the years I've worked with Segugio.it, Spiagge.it, NeN, Banca Sella, Fatture in Cloud, Soundtrap and a few others.</p>
+      <p className='text-base mt-8 font-normal leading-relaxed'>
+        Well, I'm a non-award winning UI engineer, HCI graduate and maker of dad jokes without being a dad. <br/>Lately I'm interested in design systems, motion
+        design and the <Sparkles color='#ffffff'>feel of things.</Sparkles>
+      </p>
+      <p className='text-base mt-4 font-normal leading-relaxed text-zinc-400'>
+        The kind of detail you only notice when it&apos;s missing.
+      </p>
+      <p className='text-base mt-4 font-normal leading-relaxed'>
+        Over the years I've worked with Segugio.it, Spiagge.it, NeN, Banca Sella, Fatture in Cloud, Soundtrap and a few others.
+      </p>
       <h2 className='text-2xl mt-12 font-medium'>What else?</h2>
       <p className='text-base mt-6 font-normal leading-relaxed'>I was born and raised in Trento, in the Italian Alps.</p>
       <p className='text-base mt-4 font-normal leading-relaxed'>
