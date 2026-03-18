@@ -197,7 +197,11 @@ const CV = (): JSX.Element => {
         Find me on{' '}
         <a onClick={() => openLink(LINKEDIN_URL)} className='cursor-pointer font-medium'>
           <u>Linkedin</u>
+<<<<<<< HEAD
         </a>{' '}
+=======
+        </a>
+>>>>>>> 22e77d362e9a1127032094008fab140d4e715573
         <a onClick={() => openLink(TWITTER_URL)} className='cursor-pointer font-medium'>
           <u>Twitter</u>
         </a>
