@@ -2,20 +2,22 @@ import { TWITTER_URL } from '../../constants';
 import { useTrackLink } from '../../hooks/useTrackLink';
 import { concatClassNames } from '../../utils/tailwind';
 import Sparkles from '../../components/sparkles/Sparkles';
+import { useThemeContext } from '../../hooks/useThemeContext';
 
 const Bio = (): JSX.Element => {
+  const { isDark } = useThemeContext();
   const openLink = useTrackLink();
+  const sparkleColor = isDark ? '#ffffff' : '#000000';
+  const textClass = isDark ? 'text-zinc-400' : 'text-zinc-500';
 
   return (
     <div className='mt-20'>
       <h2 className='text-2xl mt-8 font-medium'>Oh, hello.</h2>
       <p className='text-base mt-8 font-normal leading-relaxed'>
-        Well, I'm a non-award winning UI engineer, HCI graduate and maker of dad jokes without being a dad. <br/>Lately I'm interested in design systems, motion
-        design and the <Sparkles color='#ffffff'>feel of things.</Sparkles>
+        Well, I'm a non-award winning UI engineer, HCI graduate and maker of dad jokes without being a dad. <br />
+        Lately I'm interested in design systems, motion design and the <Sparkles color={sparkleColor}>feel of things.</Sparkles>
       </p>
-      <p className='text-base mt-4 font-normal leading-relaxed text-zinc-400'>
-        The kind of detail you only notice when it&apos;s missing.
-      </p>
+      <p className={`text-base mt-4 font-normal leading-relaxed ${textClass}`}>The kind of detail you only notice when it&apos;s missing.</p>
       <p className='text-base mt-4 font-normal leading-relaxed'>
         Over the years I've worked with Segugio.it, Spiagge.it, NeN, Banca Sella, Fatture in Cloud, Soundtrap and a few others.
       </p>
