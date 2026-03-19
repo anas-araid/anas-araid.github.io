@@ -11,7 +11,7 @@ const CV = (): JSX.Element => {
   return (
     <div className='mt-20 mb-32'>
       <h1 className='text-2xl font-medium'>Anas Araid</h1>
-      <p className='text-sm mt-2 text-zinc-400 font-normal'>UI Engineer, Design Systems · Belka</p>
+      <p className='text-sm mt-2 text-zinc-400 font-normal'>UI Engineer, Design Systems</p>
 
       <SectionLabel>Experience</SectionLabel>
 
@@ -197,7 +197,7 @@ const CV = (): JSX.Element => {
         Find me on{' '}
         <a onClick={() => openLink(LINKEDIN_URL)} className='cursor-pointer font-medium'>
           <u>Linkedin</u>
-        </a>{' '}
+        </a>{', '}
         <a onClick={() => openLink(TWITTER_URL)} className='cursor-pointer font-medium'>
           <u>Twitter</u>
         </a>
